@@ -83,6 +83,7 @@ async def define_transformation(
     max_tokens: int = 4096,
     temperature: float = 0.0,
     log_fn: Optional[Callable[[str], None]] = None,
+    extra_body: Optional[dict] = None,
 ) -> TransformationResult:
     """Run the transformation definer loop.
 
@@ -116,6 +117,7 @@ async def define_transformation(
             tool_choice="required",
             temperature=temperature,
             max_tokens=max_tokens,
+            extra_body=extra_body,
         )
 
         _accumulate_usage(usage, response)
@@ -146,7 +148,15 @@ async def define_transformation(
 
         if first_error is None:
             num_correct = sum(1 for r in test_results if r.correct)
-            _log(f"  ✅ Code executed successfully — {num_correct}/{len(test_results)} correct")
+            train_correct = 0
+            for ex in task.train:
+                predicted_train, train_err = execute_transformation(code, ex.input)
+                if train_err is None and predicted_train == ex.output:
+                    train_correct += 1
+            _log(
+                f"  ✅ Code executed successfully — {num_correct}/{len(test_results)} test correct, "
+                f"{train_correct}/{task.num_train} train correct"
+            )
             return TransformationResult(
                 task_id=task.task_id,
                 transformation_summary=definition.get("transformation_summary", ""),
@@ -156,6 +166,8 @@ async def define_transformation(
                 repair_attempts=repair_attempts,
                 final_error=None,
                 test_results=test_results,
+                train_num_correct=train_correct,
+                train_num_total=task.num_train,
                 usage=usage,
             )
 

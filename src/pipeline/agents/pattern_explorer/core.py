@@ -87,6 +87,7 @@ async def explore_patterns(
     max_tokens: int = 4096,
     temperature: float = 0.0,
     log_fn: Optional[Callable[[str], None]] = None,
+    extra_body: Optional[dict] = None,
 ) -> PatternDocument:
     """Run the pattern exploration loop on a task.
 
@@ -124,6 +125,7 @@ async def explore_patterns(
             tool_choice="required",
             temperature=temperature,
             max_tokens=max_tokens,
+            extra_body=extra_body,
         )
 
         _accumulate_usage(usage, response)
@@ -141,6 +143,7 @@ async def explore_patterns(
         messages=messages,
         temperature=temperature,
         max_tokens=max_tokens,
+        extra_body=extra_body,
     )
 
     _accumulate_usage(usage, response)

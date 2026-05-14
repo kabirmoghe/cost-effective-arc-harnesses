@@ -155,10 +155,14 @@ class EvalClient:
 
         return self._try(f"record_definer({task_id}/{agent_idx})", _do)
 
-    def finalize_pipeline_run(self, run_id: str) -> dict[str, Any] | None:
+    def finalize_pipeline_run(
+        self, run_id: str, extra: dict | None = None
+    ) -> dict[str, Any] | None:
         def _do() -> dict[str, Any]:
             with self._get_conn() as conn, conn.cursor() as cur:
                 metrics = compute_pipeline_metrics(cur, run_id)
+                if extra:
+                    metrics = {**metrics, **extra}
                 cur.execute(
                     "UPDATE evals SET data = %s WHERE run_id = %s",
                     (Json(metrics), run_id),
@@ -166,6 +170,36 @@ class EvalClient:
             return metrics
 
         return self._try(f"finalize_pipeline_run({run_id})", _do)
+
+    def fetch_explorers(self, run_id: str) -> dict[str, list[dict]] | None:
+        """Fetch all explorer rows for a run, grouped by task_id.
+
+        Used by the definer-only re-run mode to reuse a prior run's exploration
+        phase. Each row dict has agent_id, agent_idx, output, metadata.
+        """
+
+        def _do() -> dict[str, list[dict]]:
+            with self._get_conn() as conn, conn.cursor() as cur:
+                cur.execute(
+                    "SELECT agent_id, task_id, agent, output, metadata "
+                    "FROM explorers WHERE run_id = %s ORDER BY task_id, agent",
+                    (run_id,),
+                )
+                grouped: dict[str, list[dict]] = {}
+                for agent_id, task_id, agent, output, metadata in cur.fetchall():
+                    try:
+                        idx = int(agent.rsplit("_", 1)[-1])
+                    except ValueError:
+                        idx = 0
+                    grouped.setdefault(task_id, []).append({
+                        "agent_id": str(agent_id),
+                        "agent_idx": idx,
+                        "output": output or {},
+                        "metadata": metadata or {},
+                    })
+            return grouped
+
+        return self._try(f"fetch_explorers({run_id})", _do)
 
     # ----- baseline / CoT one-shot -----
 

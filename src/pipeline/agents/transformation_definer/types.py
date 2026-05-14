@@ -53,12 +53,20 @@ class TransformationResult:
     # Evaluation (per test pair)
     test_results: list[TestPairResult] = field(default_factory=list)
 
+    # Training-set score — ranking signal for pass@k selection across M definers
+    train_num_correct: int = 0
+    train_num_total: int = 0
+
     # Metrics
     usage: dict = field(default_factory=lambda: {"prompt_tokens": 0, "completion_tokens": 0})
 
     @property
     def success(self) -> bool:
         return self.final_error is None and self.code != ""
+
+    @property
+    def train_score(self) -> float:
+        return self.train_num_correct / self.train_num_total if self.train_num_total else 0.0
 
     @property
     def correct(self) -> bool | None:
@@ -93,6 +101,8 @@ class TransformationResult:
         else:
             status = "No output"
         lines.append(f"**Result:** {status}")
+        if self.train_num_total:
+            lines.append(f"**Training score:** {self.train_num_correct}/{self.train_num_total}")
         if self.repair_attempts > 0:
             lines.append(f"**Repair attempts:** {self.repair_attempts}/{self.max_repairs}")
         if self.final_error:
@@ -156,6 +166,7 @@ class TransformationResult:
         d["success"] = self.success
         d["correct"] = self.correct
         d["num_correct"] = self.num_correct
+        d["train_score"] = self.train_score
         return d
 
     @classmethod
@@ -180,5 +191,7 @@ class TransformationResult:
             max_repairs=data.get("max_repairs", 3),
             final_error=data.get("final_error"),
             test_results=test_results,
+            train_num_correct=data.get("train_num_correct", 0),
+            train_num_total=data.get("train_num_total", 0),
             usage=data.get("usage", {"prompt_tokens": 0, "completion_tokens": 0}),
         )
