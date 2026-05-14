@@ -1,0 +1,78 @@
+{
+  "pricing_source": "https://api-docs.deepseek.com/quick_start/pricing",
+  "pricing": {
+    "deepseek-chat": {
+      "input_per_million": 0.28,
+      "output_per_million": 0.42
+    }
+  },
+  "notes": "On-peak, cache-miss list rates. Actual cost may be lower with cache hits / off-peak.",
+  "rows": [
+    {
+      "file": "CoT_eval_metrics_full.json",
+      "split": "evaluation",
+      "approach": "cot",
+      "model": "deepseek-chat",
+      "tasks": 419,
+      "prompt_tokens": 1970497,
+      "completion_tokens": 1168836,
+      "total_cost_usd": 1.0427,
+      "cost_per_task_usd": 0.002488
+    },
+    {
+      "file": "CoT_train_metrics.json",
+      "split": "training",
+      "approach": "cot",
+      "model": "deepseek-chat",
+      "tasks": 416,
+      "prompt_tokens": 1248526,
+      "completion_tokens": 827368,
+      "total_cost_usd": 0.6971,
+      "cost_per_task_usd": 0.001676
+    },
+    {
+      "file": "baseline_eval_metrics_full.json",
+      "split": "evaluation",
+      "approach": "no-cot",
+      "model": "deepseek-chat",
+      "tasks": 419,
+      "prompt_tokens": 2046173,
+      "completion_tokens": 304381,
+      "total_cost_usd": 0.7008,
+      "cost_per_task_usd": 0.001672
+    },
+    {
+      "file": "baseline_train_metrics.json",
+      "split": "training",
+      "approach": "no-cot",
+      "model": "deepseek-chat",
+      "tasks": 416,
+      "prompt_tokens": 1258122,
+      "completion_tokens": 173284,
+      "total_cost_usd": 0.4251,
+      "cost_per_task_usd": 0.001022
+    },
+    {
+      "file": "pipeline_eval_metrics.json",
+      "split": "evaluation",
+      "approach": "pipeline",
+      "model": "deepseek-chat",
+      "tasks": 400,
+      "prompt_tokens": 72232953,
+      "completion_tokens": 8650704,
+      "total_cost_usd": 23.8585,
+      "cost_per_task_usd": 0.059646
+    },
+    {
+      "file": "pipeline_train_metrics.json",
+      "split": "training",
+      "approach": "pipeline",
+      "model": "deepseek-chat",
+      "tasks": 397,
+      "prompt_tokens": 74742180,
+      "completion_tokens": 9171758,
+      "total_cost_usd": 24.7799,
+      "cost_per_task_usd": 0.062418
+    }
+  ]
+}

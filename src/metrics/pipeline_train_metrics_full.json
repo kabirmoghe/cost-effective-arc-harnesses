@@ -1,0 +1,3193 @@
+{
+  "split": "training",
+  "model": "deepseek-chat",
+  "approach": "pipeline",
+  "total": 397,
+  "total_tasks": 397,
+  "correct": 256,
+  "errors": 3,
+  "accuracy": 0.6448362720403022,
+  "token_usage": {
+    "prompt_tokens": 74742180,
+    "completion_tokens": 9171758,
+    "total_tokens": 83913938
+  },
+  "results": [
+    {
+      "task_id": "007bbfb7",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 154997,
+      "completion_tokens": 19452
+    },
+    {
+      "task_id": "00d62c1b",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 284129,
+      "completion_tokens": 35703
+    },
+    {
+      "task_id": "017c7c7b",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 181841,
+      "completion_tokens": 22334
+    },
+    {
+      "task_id": "025d127b",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 151461,
+      "completion_tokens": 17469
+    },
+    {
+      "task_id": "045e512c",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 351500,
+      "completion_tokens": 34898
+    },
+    {
+      "task_id": "0520fde7",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 100585,
+      "completion_tokens": 11648
+    },
+    {
+      "task_id": "05269061",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 191981,
+      "completion_tokens": 30095
+    },
+    {
+      "task_id": "05f2a901",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 162099,
+      "completion_tokens": 17656
+    },
+    {
+      "task_id": "06df4c85",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 329849,
+      "completion_tokens": 30099
+    },
+    {
+      "task_id": "08ed6ac7",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 99712,
+      "completion_tokens": 11567
+    },
+    {
+      "task_id": "09629e4f",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 372358,
+      "completion_tokens": 53777
+    },
+    {
+      "task_id": "0962bcdd",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 223684,
+      "completion_tokens": 31148
+    },
+    {
+      "task_id": "0a938d79",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 242154,
+      "completion_tokens": 21215
+    },
+    {
+      "task_id": "0b148d64",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 204001,
+      "completion_tokens": 18009
+    },
+    {
+      "task_id": "0ca9ddb6",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 141781,
+      "completion_tokens": 14319
+    },
+    {
+      "task_id": "0d3d703e",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 110873,
+      "completion_tokens": 12043
+    },
+    {
+      "task_id": "0dfd9992",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 296330,
+      "completion_tokens": 26334
+    },
+    {
+      "task_id": "0e206a2e",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 255308,
+      "completion_tokens": 31606
+    },
+    {
+      "task_id": "10fcaaa3",
+      "test_index": 0,
+      "correct": false,
+      "error": "Max steps reached without emitting define_transformation",
+      "prompt_tokens": 255718,
+      "completion_tokens": 33351
+    },
+    {
+      "task_id": "11852cab",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 170240,
+      "completion_tokens": 20288
+    },
+    {
+      "task_id": "1190e5a7",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 140957,
+      "completion_tokens": 12625
+    },
+    {
+      "task_id": "137eaa0f",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 197611,
+      "completion_tokens": 30624
+    },
+    {
+      "task_id": "150deff5",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 167466,
+      "completion_tokens": 22624
+    },
+    {
+      "task_id": "178fcbfb",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 132587,
+      "completion_tokens": 12951
+    },
+    {
+      "task_id": "1a07d186",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 209043,
+      "completion_tokens": 17558
+    },
+    {
+      "task_id": "1b2d62fb",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 150733,
+      "completion_tokens": 16325
+    },
+    {
+      "task_id": "1b60fb0c",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 224151,
+      "completion_tokens": 46405
+    },
+    {
+      "task_id": "1bfc4729",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 148888,
+      "completion_tokens": 16083
+    },
+    {
+      "task_id": "1c786137",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 242107,
+      "completion_tokens": 39955
+    },
+    {
+      "task_id": "1caeab9d",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 160514,
+      "completion_tokens": 20285
+    },
+    {
+      "task_id": "1cf80156",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 98398,
+      "completion_tokens": 8696
+    },
+    {
+      "task_id": "1e0a9b12",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 113711,
+      "completion_tokens": 13102
+    },
+    {
+      "task_id": "1e32b0e9",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 226147,
+      "completion_tokens": 22260
+    },
+    {
+      "task_id": "1f0c79e5",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 213392,
+      "completion_tokens": 29378
+    },
+    {
+      "task_id": "1f642eb9",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 176977,
+      "completion_tokens": 18837
+    },
+    {
+      "task_id": "1f85a75f",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 190244,
+      "completion_tokens": 17043
+    },
+    {
+      "task_id": "1f876c06",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 154591,
+      "completion_tokens": 16565
+    },
+    {
+      "task_id": "1fad071e",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 185688,
+      "completion_tokens": 39119
+    },
+    {
+      "task_id": "2013d3e2",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 110415,
+      "completion_tokens": 13081
+    },
+    {
+      "task_id": "2204b7a8",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 166270,
+      "completion_tokens": 22895
+    },
+    {
+      "task_id": "22168020",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 155590,
+      "completion_tokens": 16023
+    },
+    {
+      "task_id": "22233c11",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 313008,
+      "completion_tokens": 51733
+    },
+    {
+      "task_id": "2281f1f4",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 122651,
+      "completion_tokens": 11782
+    },
+    {
+      "task_id": "228f6490",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 228596,
+      "completion_tokens": 30756
+    },
+    {
+      "task_id": "22eb0ac0",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 113605,
+      "completion_tokens": 9584
+    },
+    {
+      "task_id": "234bbc79",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 187315,
+      "completion_tokens": 27671
+    },
+    {
+      "task_id": "23581191",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 123245,
+      "completion_tokens": 14850
+    },
+    {
+      "task_id": "239be575",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 98608,
+      "completion_tokens": 57219
+    },
+    {
+      "task_id": "23b5c85d",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 162380,
+      "completion_tokens": 12955
+    },
+    {
+      "task_id": "253bf280",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 173149,
+      "completion_tokens": 13627
+    },
+    {
+      "task_id": "25d487eb",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 157722,
+      "completion_tokens": 14133
+    },
+    {
+      "task_id": "25d8a9c8",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 73869,
+      "completion_tokens": 8139
+    },
+    {
+      "task_id": "25ff71a9",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 111761,
+      "completion_tokens": 12079
+    },
+    {
+      "task_id": "264363fd",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 528568,
+      "completion_tokens": 38977
+    },
+    {
+      "task_id": "272f95fa",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 163963,
+      "completion_tokens": 14752
+    },
+    {
+      "task_id": "27a28665",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 202587,
+      "completion_tokens": 49106
+    },
+    {
+      "task_id": "28bf18c6",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 124129,
+      "completion_tokens": 16503
+    },
+    {
+      "task_id": "28e73c20",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 281935,
+      "completion_tokens": 33915
+    },
+    {
+      "task_id": "29623171",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 173764,
+      "completion_tokens": 20370
+    },
+    {
+      "task_id": "29c11459",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 103728,
+      "completion_tokens": 11443
+    },
+    {
+      "task_id": "29ec7d0e",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 333864,
+      "completion_tokens": 40065
+    },
+    {
+      "task_id": "2bcee788",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 271521,
+      "completion_tokens": 36062
+    },
+    {
+      "task_id": "2bee17df",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 233167,
+      "completion_tokens": 30971
+    },
+    {
+      "task_id": "2c608aff",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 233907,
+      "completion_tokens": 22787
+    },
+    {
+      "task_id": "2dc579da",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 149182,
+      "completion_tokens": 18181
+    },
+    {
+      "task_id": "2dd70a9a",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 329359,
+      "completion_tokens": 37761
+    },
+    {
+      "task_id": "2dee498d",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 121104,
+      "completion_tokens": 13411
+    },
+    {
+      "task_id": "31aa019c",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 148148,
+      "completion_tokens": 18923
+    },
+    {
+      "task_id": "321b1fc6",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 148929,
+      "completion_tokens": 17829
+    },
+    {
+      "task_id": "32597951",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 270301,
+      "completion_tokens": 33815
+    },
+    {
+      "task_id": "3345333e",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 196694,
+      "completion_tokens": 23160
+    },
+    {
+      "task_id": "3428a4f5",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 142223,
+      "completion_tokens": 15735
+    },
+    {
+      "task_id": "3618c87e",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 124507,
+      "completion_tokens": 14105
+    },
+    {
+      "task_id": "3631a71a",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 665575,
+      "completion_tokens": 51626
+    },
+    {
+      "task_id": "363442ee",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 174544,
+      "completion_tokens": 19062
+    },
+    {
+      "task_id": "36d67576",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 314107,
+      "completion_tokens": 43319
+    },
+    {
+      "task_id": "36fdfd69",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 389672,
+      "completion_tokens": 52530
+    },
+    {
+      "task_id": "3906de3d",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 156190,
+      "completion_tokens": 19080
+    },
+    {
+      "task_id": "39a8645d",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 157667,
+      "completion_tokens": 19021
+    },
+    {
+      "task_id": "39e1d7f9",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 424575,
+      "completion_tokens": 49113
+    },
+    {
+      "task_id": "3aa6fb7a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 98854,
+      "completion_tokens": 11411
+    },
+    {
+      "task_id": "3ac3eb23",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 134333,
+      "completion_tokens": 14580
+    },
+    {
+      "task_id": "3af2c5a8",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 102830,
+      "completion_tokens": 10624
+    },
+    {
+      "task_id": "3bd67248",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 130407,
+      "completion_tokens": 12182
+    },
+    {
+      "task_id": "3bdb4ada",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 133896,
+      "completion_tokens": 11307
+    },
+    {
+      "task_id": "3befdf3e",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 143180,
+      "completion_tokens": 17821
+    },
+    {
+      "task_id": "3c9b0459",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 92187,
+      "completion_tokens": 9833
+    },
+    {
+      "task_id": "3de23699",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 145324,
+      "completion_tokens": 16564
+    },
+    {
+      "task_id": "3e980e27",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 280860,
+      "completion_tokens": 37214
+    },
+    {
+      "task_id": "3eda0437",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 204891,
+      "completion_tokens": 26181
+    },
+    {
+      "task_id": "3f7978a0",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 147043,
+      "completion_tokens": 18569
+    },
+    {
+      "task_id": "40853293",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 197834,
+      "completion_tokens": 16130
+    },
+    {
+      "task_id": "4093f84a",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 283586,
+      "completion_tokens": 35026
+    },
+    {
+      "task_id": "41e4d17e",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 147463,
+      "completion_tokens": 12050
+    },
+    {
+      "task_id": "4258a5f9",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 134130,
+      "completion_tokens": 14024
+    },
+    {
+      "task_id": "4290ef0e",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 216589,
+      "completion_tokens": 26627
+    },
+    {
+      "task_id": "42a50994",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 281785,
+      "completion_tokens": 35965
+    },
+    {
+      "task_id": "4347f46a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 152621,
+      "completion_tokens": 12394
+    },
+    {
+      "task_id": "444801d8",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 147082,
+      "completion_tokens": 16034
+    },
+    {
+      "task_id": "445eab21",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 146880,
+      "completion_tokens": 14935
+    },
+    {
+      "task_id": "447fd412",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 198881,
+      "completion_tokens": 22893
+    },
+    {
+      "task_id": "44d8ac46",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 227451,
+      "completion_tokens": 23399
+    },
+    {
+      "task_id": "44f52bb0",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 116183,
+      "completion_tokens": 14438
+    },
+    {
+      "task_id": "4522001f",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 168239,
+      "completion_tokens": 32578
+    },
+    {
+      "task_id": "4612dd53",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 223503,
+      "completion_tokens": 36870
+    },
+    {
+      "task_id": "46442a0e",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 261983,
+      "completion_tokens": 36454
+    },
+    {
+      "task_id": "469497ad",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 257975,
+      "completion_tokens": 36707
+    },
+    {
+      "task_id": "46f33fce",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 246805,
+      "completion_tokens": 21580
+    },
+    {
+      "task_id": "47c1f68c",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 166854,
+      "completion_tokens": 23805
+    },
+    {
+      "task_id": "484b58aa",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 457539,
+      "completion_tokens": 36844
+    },
+    {
+      "task_id": "48d8fb45",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 155961,
+      "completion_tokens": 22271
+    },
+    {
+      "task_id": "4938f0c2",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 239104,
+      "completion_tokens": 24713
+    },
+    {
+      "task_id": "496994bd",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 85409,
+      "completion_tokens": 9482
+    },
+    {
+      "task_id": "49d1d64f",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 128327,
+      "completion_tokens": 15875
+    },
+    {
+      "task_id": "4be741c5",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 102706,
+      "completion_tokens": 10564
+    },
+    {
+      "task_id": "4c4377d9",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 182376,
+      "completion_tokens": 21367
+    },
+    {
+      "task_id": "4c5c2cf0",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 209545,
+      "completion_tokens": 26041
+    },
+    {
+      "task_id": "50846271",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 447428,
+      "completion_tokens": 69729
+    },
+    {
+      "task_id": "508bd3b6",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 241380,
+      "completion_tokens": 32761
+    },
+    {
+      "task_id": "50cb2852",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 145199,
+      "completion_tokens": 12399
+    },
+    {
+      "task_id": "5117e062",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 146470,
+      "completion_tokens": 14049
+    },
+    {
+      "task_id": "5168d44c",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 195559,
+      "completion_tokens": 24233
+    },
+    {
+      "task_id": "539a4f51",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 289840,
+      "completion_tokens": 43746
+    },
+    {
+      "task_id": "53b68214",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 139005,
+      "completion_tokens": 17952
+    },
+    {
+      "task_id": "543a7ed5",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 195770,
+      "completion_tokens": 19709
+    },
+    {
+      "task_id": "54d82841",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 155117,
+      "completion_tokens": 17534
+    },
+    {
+      "task_id": "5521c0d9",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 232262,
+      "completion_tokens": 30730
+    },
+    {
+      "task_id": "5614dbcf",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 123605,
+      "completion_tokens": 15277
+    },
+    {
+      "task_id": "56dc2b01",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 146631,
+      "completion_tokens": 16545
+    },
+    {
+      "task_id": "56ff96f3",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 123416,
+      "completion_tokens": 10873
+    },
+    {
+      "task_id": "57aa92db",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 314106,
+      "completion_tokens": 27814
+    },
+    {
+      "task_id": "5ad4f10b",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 317278,
+      "completion_tokens": 43507
+    },
+    {
+      "task_id": "5bd6f4ac",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 89304,
+      "completion_tokens": 8505
+    },
+    {
+      "task_id": "5c0a986e",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 182346,
+      "completion_tokens": 23372
+    },
+    {
+      "task_id": "5c2c9af4",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 373894,
+      "completion_tokens": 35076
+    },
+    {
+      "task_id": "5daaa586",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 158655,
+      "completion_tokens": 14090
+    },
+    {
+      "task_id": "60b61512",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 135131,
+      "completion_tokens": 22288
+    },
+    {
+      "task_id": "6150a2bd",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 79000,
+      "completion_tokens": 9962
+    },
+    {
+      "task_id": "623ea044",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 170372,
+      "completion_tokens": 16936
+    },
+    {
+      "task_id": "62c24649",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 111029,
+      "completion_tokens": 12800
+    },
+    {
+      "task_id": "63613498",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 245381,
+      "completion_tokens": 36370
+    },
+    {
+      "task_id": "6430c8c4",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 164251,
+      "completion_tokens": 19127
+    },
+    {
+      "task_id": "6455b5f5",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 257249,
+      "completion_tokens": 27960
+    },
+    {
+      "task_id": "662c240a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 208619,
+      "completion_tokens": 43471
+    },
+    {
+      "task_id": "67385a82",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 105313,
+      "completion_tokens": 11447
+    },
+    {
+      "task_id": "673ef223",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 185632,
+      "completion_tokens": 20031
+    },
+    {
+      "task_id": "6773b310",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 196448,
+      "completion_tokens": 29269
+    },
+    {
+      "task_id": "67a3c6ac",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 105121,
+      "completion_tokens": 11248
+    },
+    {
+      "task_id": "67a423a3",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 137990,
+      "completion_tokens": 16347
+    },
+    {
+      "task_id": "67e8384a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 133281,
+      "completion_tokens": 14824
+    },
+    {
+      "task_id": "681b3aeb",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 216644,
+      "completion_tokens": 38146
+    },
+    {
+      "task_id": "6855a6e4",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 243726,
+      "completion_tokens": 27875
+    },
+    {
+      "task_id": "68b16354",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 105423,
+      "completion_tokens": 11180
+    },
+    {
+      "task_id": "694f12f3",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 105011,
+      "completion_tokens": 10905
+    },
+    {
+      "task_id": "6a1e5592",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 226769,
+      "completion_tokens": 30096
+    },
+    {
+      "task_id": "6aa20dc0",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 381079,
+      "completion_tokens": 38474
+    },
+    {
+      "task_id": "6b9890af",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 265462,
+      "completion_tokens": 28636
+    },
+    {
+      "task_id": "6c434453",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 154249,
+      "completion_tokens": 19918
+    },
+    {
+      "task_id": "6cdd2623",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 245871,
+      "completion_tokens": 46496
+    },
+    {
+      "task_id": "6cf79266",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 237313,
+      "completion_tokens": 16762
+    },
+    {
+      "task_id": "6d0160f0",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 244530,
+      "completion_tokens": 39302
+    },
+    {
+      "task_id": "6d0aefbc",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 83108,
+      "completion_tokens": 9300
+    },
+    {
+      "task_id": "6d58a25d",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 405558,
+      "completion_tokens": 52152
+    },
+    {
+      "task_id": "6d75e8bb",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 316986,
+      "completion_tokens": 57651
+    },
+    {
+      "task_id": "6e02f1e3",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 110425,
+      "completion_tokens": 13363
+    },
+    {
+      "task_id": "6e19193c",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 154136,
+      "completion_tokens": 21851
+    },
+    {
+      "task_id": "6e82a1ae",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 193544,
+      "completion_tokens": 28722
+    },
+    {
+      "task_id": "6ecd11f4",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 337931,
+      "completion_tokens": 56896
+    },
+    {
+      "task_id": "6f8cd79b",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 91101,
+      "completion_tokens": 10747
+    },
+    {
+      "task_id": "6fa7a44f",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 84728,
+      "completion_tokens": 9109
+    },
+    {
+      "task_id": "72322fa7",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 234112,
+      "completion_tokens": 26180
+    },
+    {
+      "task_id": "72ca375d",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 117544,
+      "completion_tokens": 16577
+    },
+    {
+      "task_id": "73251a56",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 383120,
+      "completion_tokens": 48348
+    },
+    {
+      "task_id": "7447852a",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 278291,
+      "completion_tokens": 56130
+    },
+    {
+      "task_id": "7468f01a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 136720,
+      "completion_tokens": 11916
+    },
+    {
+      "task_id": "746b3537",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 94077,
+      "completion_tokens": 11107
+    },
+    {
+      "task_id": "74dd1130",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 76311,
+      "completion_tokens": 7349
+    },
+    {
+      "task_id": "75b8110e",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 183024,
+      "completion_tokens": 27793
+    },
+    {
+      "task_id": "760b3cac",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 214671,
+      "completion_tokens": 45871
+    },
+    {
+      "task_id": "776ffc46",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 354986,
+      "completion_tokens": 27379
+    },
+    {
+      "task_id": "77fdfe62",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 145233,
+      "completion_tokens": 31207
+    },
+    {
+      "task_id": "780d0b14",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 184919,
+      "completion_tokens": 16973
+    },
+    {
+      "task_id": "7837ac64",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 508260,
+      "completion_tokens": 55854
+    },
+    {
+      "task_id": "794b24be",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 149988,
+      "completion_tokens": 24083
+    },
+    {
+      "task_id": "7b6016b9",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 271669,
+      "completion_tokens": 13979
+    },
+    {
+      "task_id": "7b7f7511",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 116441,
+      "completion_tokens": 13454
+    },
+    {
+      "task_id": "7c008303",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 152243,
+      "completion_tokens": 22132
+    },
+    {
+      "task_id": "7ddcd7ec",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 157220,
+      "completion_tokens": 15218
+    },
+    {
+      "task_id": "7df24a62",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 396889,
+      "completion_tokens": 45434
+    },
+    {
+      "task_id": "7e0986d6",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 191410,
+      "completion_tokens": 31262
+    },
+    {
+      "task_id": "7f4411dc",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 186777,
+      "completion_tokens": 19099
+    },
+    {
+      "task_id": "7fe24cdd",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 97583,
+      "completion_tokens": 14115
+    },
+    {
+      "task_id": "80af3007",
+      "test_index": 0,
+      "correct": false,
+      "error": "Max steps reached without emitting define_transformation",
+      "prompt_tokens": 376477,
+      "completion_tokens": 48062
+    },
+    {
+      "task_id": "810b9b61",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 167886,
+      "completion_tokens": 15860
+    },
+    {
+      "task_id": "82819916",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 172220,
+      "completion_tokens": 16516
+    },
+    {
+      "task_id": "83302e8f",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 425855,
+      "completion_tokens": 35873
+    },
+    {
+      "task_id": "834ec97d",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 112087,
+      "completion_tokens": 11802
+    },
+    {
+      "task_id": "8403a5d5",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 158532,
+      "completion_tokens": 17154
+    },
+    {
+      "task_id": "846bdb03",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 224726,
+      "completion_tokens": 31498
+    },
+    {
+      "task_id": "855e0971",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 210072,
+      "completion_tokens": 14217
+    },
+    {
+      "task_id": "85c4e7cd",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 129199,
+      "completion_tokens": 11225
+    },
+    {
+      "task_id": "868de0fa",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 251033,
+      "completion_tokens": 27007
+    },
+    {
+      "task_id": "8731374e",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 219176,
+      "completion_tokens": 22596
+    },
+    {
+      "task_id": "88a10436",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 148743,
+      "completion_tokens": 15636
+    },
+    {
+      "task_id": "88a62173",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 95466,
+      "completion_tokens": 14860
+    },
+    {
+      "task_id": "890034e9",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 370557,
+      "completion_tokens": 46801
+    },
+    {
+      "task_id": "8a004b2b",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 234878,
+      "completion_tokens": 28875
+    },
+    {
+      "task_id": "8be77c9e",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 74530,
+      "completion_tokens": 7902
+    },
+    {
+      "task_id": "8d5021e8",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 176109,
+      "completion_tokens": 36075
+    },
+    {
+      "task_id": "8d510a79",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 174995,
+      "completion_tokens": 25659
+    },
+    {
+      "task_id": "8e1813be",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 162502,
+      "completion_tokens": 18953
+    },
+    {
+      "task_id": "8e5a5113",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 126592,
+      "completion_tokens": 15489
+    },
+    {
+      "task_id": "8eb1be9a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 222056,
+      "completion_tokens": 26838
+    },
+    {
+      "task_id": "8efcae92",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 268362,
+      "completion_tokens": 33344
+    },
+    {
+      "task_id": "8f2ea7aa",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 177341,
+      "completion_tokens": 31262
+    },
+    {
+      "task_id": "90c28cc7",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 175612,
+      "completion_tokens": 14843
+    },
+    {
+      "task_id": "90f3ed37",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 242689,
+      "completion_tokens": 32046
+    },
+    {
+      "task_id": "913fb3ed",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 152416,
+      "completion_tokens": 12745
+    },
+    {
+      "task_id": "91413438",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 230542,
+      "completion_tokens": 31241
+    },
+    {
+      "task_id": "91714a58",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 173139,
+      "completion_tokens": 12638
+    },
+    {
+      "task_id": "9172f3a0",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 85602,
+      "completion_tokens": 8774
+    },
+    {
+      "task_id": "928ad970",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 244814,
+      "completion_tokens": 32909
+    },
+    {
+      "task_id": "93b581b8",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 163407,
+      "completion_tokens": 24543
+    },
+    {
+      "task_id": "941d9a10",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 157381,
+      "completion_tokens": 20013
+    },
+    {
+      "task_id": "94f9d214",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 125435,
+      "completion_tokens": 19509
+    },
+    {
+      "task_id": "952a094c",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 149409,
+      "completion_tokens": 14371
+    },
+    {
+      "task_id": "9565186b",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 103369,
+      "completion_tokens": 12079
+    },
+    {
+      "task_id": "95990924",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 144381,
+      "completion_tokens": 12146
+    },
+    {
+      "task_id": "963e52fc",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 187578,
+      "completion_tokens": 30412
+    },
+    {
+      "task_id": "97999447",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 116599,
+      "completion_tokens": 10854
+    },
+    {
+      "task_id": "97a05b5b",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 245366,
+      "completion_tokens": 33888
+    },
+    {
+      "task_id": "98cf29f8",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 213627,
+      "completion_tokens": 20801
+    },
+    {
+      "task_id": "995c5fa3",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 150645,
+      "completion_tokens": 22668
+    },
+    {
+      "task_id": "99b1bc43",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 140318,
+      "completion_tokens": 16817
+    },
+    {
+      "task_id": "99fa7670",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 117442,
+      "completion_tokens": 13394
+    },
+    {
+      "task_id": "9aec4887",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 206651,
+      "completion_tokens": 27704
+    },
+    {
+      "task_id": "9af7a82c",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 114840,
+      "completion_tokens": 12804
+    },
+    {
+      "task_id": "9d9215db",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 360395,
+      "completion_tokens": 47810
+    },
+    {
+      "task_id": "9dfd6313",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 92299,
+      "completion_tokens": 9641
+    },
+    {
+      "task_id": "9ecd008a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 152948,
+      "completion_tokens": 23183
+    },
+    {
+      "task_id": "9edfc990",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 269477,
+      "completion_tokens": 46987
+    },
+    {
+      "task_id": "9f236235",
+      "test_index": 0,
+      "correct": false,
+      "error": "Traceback (most recent call last):\n  File \"<string>\", line 6, in <module>\nNameError: name 'transform' is not defined",
+      "prompt_tokens": 216869,
+      "completion_tokens": 36801
+    },
+    {
+      "task_id": "a1570a43",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 218639,
+      "completion_tokens": 23253
+    },
+    {
+      "task_id": "a2fd1cf0",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 145866,
+      "completion_tokens": 12359
+    },
+    {
+      "task_id": "a3325580",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 171651,
+      "completion_tokens": 16536
+    },
+    {
+      "task_id": "a3df8b1e",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 124434,
+      "completion_tokens": 16000
+    },
+    {
+      "task_id": "a416b8f3",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 75251,
+      "completion_tokens": 7787
+    },
+    {
+      "task_id": "a48eeaf7",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 191643,
+      "completion_tokens": 24549
+    },
+    {
+      "task_id": "a5313dff",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 146684,
+      "completion_tokens": 13769
+    },
+    {
+      "task_id": "a5f85a15",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 178018,
+      "completion_tokens": 20811
+    },
+    {
+      "task_id": "a61ba2ce",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 158155,
+      "completion_tokens": 19621
+    },
+    {
+      "task_id": "a61f2674",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 113895,
+      "completion_tokens": 13564
+    },
+    {
+      "task_id": "a64e4611",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 483729,
+      "completion_tokens": 31438
+    },
+    {
+      "task_id": "a65b410d",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 141161,
+      "completion_tokens": 16467
+    },
+    {
+      "task_id": "a68b268e",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 158667,
+      "completion_tokens": 21668
+    },
+    {
+      "task_id": "a699fb00",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 128577,
+      "completion_tokens": 12841
+    },
+    {
+      "task_id": "a740d043",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 91198,
+      "completion_tokens": 10423
+    },
+    {
+      "task_id": "a78176bb",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 236007,
+      "completion_tokens": 39306
+    },
+    {
+      "task_id": "a79310a0",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 102099,
+      "completion_tokens": 12026
+    },
+    {
+      "task_id": "a85d4709",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 101120,
+      "completion_tokens": 11350
+    },
+    {
+      "task_id": "a87f7484",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 151016,
+      "completion_tokens": 18103
+    },
+    {
+      "task_id": "a8c38be5",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 301073,
+      "completion_tokens": 43441
+    },
+    {
+      "task_id": "a8d7556c",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 323030,
+      "completion_tokens": 37951
+    },
+    {
+      "task_id": "a9f96cdd",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 90382,
+      "completion_tokens": 9899
+    },
+    {
+      "task_id": "aabf363d",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 105228,
+      "completion_tokens": 11297
+    },
+    {
+      "task_id": "aba27056",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 178260,
+      "completion_tokens": 24685
+    },
+    {
+      "task_id": "ac0a08a4",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 124162,
+      "completion_tokens": 13064
+    },
+    {
+      "task_id": "ae3edfdc",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 223859,
+      "completion_tokens": 19358
+    },
+    {
+      "task_id": "ae4f1146",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 239371,
+      "completion_tokens": 37201
+    },
+    {
+      "task_id": "aedd82e4",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 96221,
+      "completion_tokens": 11606
+    },
+    {
+      "task_id": "af902bf9",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 131345,
+      "completion_tokens": 12382
+    },
+    {
+      "task_id": "b0c4d837",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 184281,
+      "completion_tokens": 28708
+    },
+    {
+      "task_id": "b190f7f5",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 189033,
+      "completion_tokens": 33223
+    },
+    {
+      "task_id": "b1948b0a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 79690,
+      "completion_tokens": 8796
+    },
+    {
+      "task_id": "b230c067",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 171866,
+      "completion_tokens": 19308
+    },
+    {
+      "task_id": "b27ca6d3",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 186161,
+      "completion_tokens": 17257
+    },
+    {
+      "task_id": "b2862040",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 212186,
+      "completion_tokens": 33495
+    },
+    {
+      "task_id": "b527c5c6",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 295084,
+      "completion_tokens": 33233
+    },
+    {
+      "task_id": "b548a754",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 162727,
+      "completion_tokens": 17502
+    },
+    {
+      "task_id": "b60334d2",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 168796,
+      "completion_tokens": 19046
+    },
+    {
+      "task_id": "b6afb2da",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 125808,
+      "completion_tokens": 12980
+    },
+    {
+      "task_id": "b7249182",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 231229,
+      "completion_tokens": 33119
+    },
+    {
+      "task_id": "b775ac94",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 429849,
+      "completion_tokens": 37429
+    },
+    {
+      "task_id": "b782dc8a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 217964,
+      "completion_tokens": 30119
+    },
+    {
+      "task_id": "b8825c91",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 276700,
+      "completion_tokens": 28503
+    },
+    {
+      "task_id": "b8cdaf2b",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 171364,
+      "completion_tokens": 24879
+    },
+    {
+      "task_id": "b91ae062",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 156085,
+      "completion_tokens": 19939
+    },
+    {
+      "task_id": "b94a9452",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 117107,
+      "completion_tokens": 12289
+    },
+    {
+      "task_id": "b9b7f026",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 147419,
+      "completion_tokens": 15177
+    },
+    {
+      "task_id": "ba26e723",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 130152,
+      "completion_tokens": 14655
+    },
+    {
+      "task_id": "ba97ae07",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 160516,
+      "completion_tokens": 18037
+    },
+    {
+      "task_id": "bb43febb",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 117806,
+      "completion_tokens": 12587
+    },
+    {
+      "task_id": "bbc9ae5d",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 144615,
+      "completion_tokens": 18019
+    },
+    {
+      "task_id": "bc1d5164",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 257792,
+      "completion_tokens": 47766
+    },
+    {
+      "task_id": "bd4472b8",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 89711,
+      "completion_tokens": 10543
+    },
+    {
+      "task_id": "bda2d7a6",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 136600,
+      "completion_tokens": 20378
+    },
+    {
+      "task_id": "bdad9b1f",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 118897,
+      "completion_tokens": 15190
+    },
+    {
+      "task_id": "be94b721",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 129304,
+      "completion_tokens": 15327
+    },
+    {
+      "task_id": "beb8660c",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 143219,
+      "completion_tokens": 17720
+    },
+    {
+      "task_id": "c0f76784",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 222192,
+      "completion_tokens": 24424
+    },
+    {
+      "task_id": "c1d99e64",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 178382,
+      "completion_tokens": 12555
+    },
+    {
+      "task_id": "c3e719e8",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 133940,
+      "completion_tokens": 14637
+    },
+    {
+      "task_id": "c3f564a4",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 202646,
+      "completion_tokens": 14974
+    },
+    {
+      "task_id": "c444b776",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 189477,
+      "completion_tokens": 19362
+    },
+    {
+      "task_id": "c59eb873",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 93072,
+      "completion_tokens": 9715
+    },
+    {
+      "task_id": "c8cbb738",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 171414,
+      "completion_tokens": 25453
+    },
+    {
+      "task_id": "c8f0f002",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 80462,
+      "completion_tokens": 8150
+    },
+    {
+      "task_id": "c909285e",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 362727,
+      "completion_tokens": 43973
+    },
+    {
+      "task_id": "c9e6f938",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 84940,
+      "completion_tokens": 9446
+    },
+    {
+      "task_id": "c9f8e694",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 133844,
+      "completion_tokens": 13575
+    },
+    {
+      "task_id": "caa06a1f",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 147538,
+      "completion_tokens": 17179
+    },
+    {
+      "task_id": "cbded52d",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 278336,
+      "completion_tokens": 37231
+    },
+    {
+      "task_id": "cce03e0d",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 138736,
+      "completion_tokens": 14151
+    },
+    {
+      "task_id": "cdecee7f",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 143093,
+      "completion_tokens": 18814
+    },
+    {
+      "task_id": "ce22a75a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 118872,
+      "completion_tokens": 12799
+    },
+    {
+      "task_id": "ce4f8723",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 175827,
+      "completion_tokens": 22865
+    },
+    {
+      "task_id": "ce602527",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 235582,
+      "completion_tokens": 28085
+    },
+    {
+      "task_id": "ce9e57f2",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 372485,
+      "completion_tokens": 52649
+    },
+    {
+      "task_id": "cf98881b",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 165200,
+      "completion_tokens": 19752
+    },
+    {
+      "task_id": "d037b0a7",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 109678,
+      "completion_tokens": 14636
+    },
+    {
+      "task_id": "d06dbe63",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 189283,
+      "completion_tokens": 25087
+    },
+    {
+      "task_id": "d07ae81c",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 218448,
+      "completion_tokens": 28200
+    },
+    {
+      "task_id": "d0f5fe59",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 142059,
+      "completion_tokens": 14381
+    },
+    {
+      "task_id": "d10ecb37",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 142280,
+      "completion_tokens": 15705
+    },
+    {
+      "task_id": "d13f3404",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 132552,
+      "completion_tokens": 19319
+    },
+    {
+      "task_id": "d22278a0",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 238345,
+      "completion_tokens": 33950
+    },
+    {
+      "task_id": "d23f8c26",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 90046,
+      "completion_tokens": 9769
+    },
+    {
+      "task_id": "d2abd087",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 204203,
+      "completion_tokens": 32214
+    },
+    {
+      "task_id": "d364b489",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 184052,
+      "completion_tokens": 28136
+    },
+    {
+      "task_id": "d406998b",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 141581,
+      "completion_tokens": 15807
+    },
+    {
+      "task_id": "d43fd935",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 181393,
+      "completion_tokens": 25280
+    },
+    {
+      "task_id": "d4469b4b",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 183744,
+      "completion_tokens": 22203
+    },
+    {
+      "task_id": "d4a91cb9",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 156775,
+      "completion_tokens": 17733
+    },
+    {
+      "task_id": "d4f3cd78",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 114821,
+      "completion_tokens": 12988
+    },
+    {
+      "task_id": "d511f180",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 95539,
+      "completion_tokens": 11492
+    },
+    {
+      "task_id": "d5d6de2d",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 137621,
+      "completion_tokens": 12150
+    },
+    {
+      "task_id": "d631b094",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 97730,
+      "completion_tokens": 14104
+    },
+    {
+      "task_id": "d687bc17",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 197782,
+      "completion_tokens": 22630
+    },
+    {
+      "task_id": "d6ad076f",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 160799,
+      "completion_tokens": 21778
+    },
+    {
+      "task_id": "d89b689b",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 142780,
+      "completion_tokens": 15564
+    },
+    {
+      "task_id": "d8c310e9",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 181143,
+      "completion_tokens": 25372
+    },
+    {
+      "task_id": "d90796e8",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 122440,
+      "completion_tokens": 13677
+    },
+    {
+      "task_id": "d9f24cd1",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 172104,
+      "completion_tokens": 24221
+    },
+    {
+      "task_id": "d9fac9be",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 148552,
+      "completion_tokens": 16580
+    },
+    {
+      "task_id": "dae9d2b5",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 129126,
+      "completion_tokens": 18625
+    },
+    {
+      "task_id": "db3e9e38",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 122197,
+      "completion_tokens": 14417
+    },
+    {
+      "task_id": "db93a21d",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 273525,
+      "completion_tokens": 22977
+    },
+    {
+      "task_id": "dbc1a6ce",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 232756,
+      "completion_tokens": 24788
+    },
+    {
+      "task_id": "dc0a314f",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 331755,
+      "completion_tokens": 56553
+    },
+    {
+      "task_id": "dc1df850",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 117431,
+      "completion_tokens": 13482
+    },
+    {
+      "task_id": "dc433765",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 169107,
+      "completion_tokens": 16481
+    },
+    {
+      "task_id": "ddf7fa4f",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 117234,
+      "completion_tokens": 12870
+    },
+    {
+      "task_id": "de1cd16c",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 181993,
+      "completion_tokens": 23949
+    },
+    {
+      "task_id": "ded97339",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 121110,
+      "completion_tokens": 11324
+    },
+    {
+      "task_id": "e179c5f4",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 131066,
+      "completion_tokens": 17233
+    },
+    {
+      "task_id": "e21d9049",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 188034,
+      "completion_tokens": 24132
+    },
+    {
+      "task_id": "e26a3af2",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 246150,
+      "completion_tokens": 22780
+    },
+    {
+      "task_id": "e3497940",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 161692,
+      "completion_tokens": 20704
+    },
+    {
+      "task_id": "e40b9e2f",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 270560,
+      "completion_tokens": 41017
+    },
+    {
+      "task_id": "e48d4e1a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 164322,
+      "completion_tokens": 15005
+    },
+    {
+      "task_id": "e5062a87",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 279450,
+      "completion_tokens": 46980
+    },
+    {
+      "task_id": "e509e548",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 292732,
+      "completion_tokens": 38149
+    },
+    {
+      "task_id": "e50d258f",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 122359,
+      "completion_tokens": 17089
+    },
+    {
+      "task_id": "e6721834",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 218340,
+      "completion_tokens": 26549
+    },
+    {
+      "task_id": "e73095fd",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 222988,
+      "completion_tokens": 24388
+    },
+    {
+      "task_id": "e76a88a6",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 140477,
+      "completion_tokens": 17696
+    },
+    {
+      "task_id": "e8593010",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 177480,
+      "completion_tokens": 18812
+    },
+    {
+      "task_id": "e9614598",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 111696,
+      "completion_tokens": 10959
+    },
+    {
+      "task_id": "e98196ab",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 158947,
+      "completion_tokens": 19729
+    },
+    {
+      "task_id": "e9afcf9a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 83262,
+      "completion_tokens": 9985
+    },
+    {
+      "task_id": "ea32f347",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 133685,
+      "completion_tokens": 10915
+    },
+    {
+      "task_id": "ea786f4a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 133635,
+      "completion_tokens": 18042
+    },
+    {
+      "task_id": "eb281b96",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 142234,
+      "completion_tokens": 14817
+    },
+    {
+      "task_id": "eb5a1d5d",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 200419,
+      "completion_tokens": 15182
+    },
+    {
+      "task_id": "ec883f72",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 182830,
+      "completion_tokens": 25168
+    },
+    {
+      "task_id": "ecdecbb3",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 234839,
+      "completion_tokens": 28208
+    },
+    {
+      "task_id": "ed36ccf7",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 162617,
+      "completion_tokens": 37529
+    },
+    {
+      "task_id": "ef135b50",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 159091,
+      "completion_tokens": 28423
+    },
+    {
+      "task_id": "f15e1fac",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 213906,
+      "completion_tokens": 25168
+    },
+    {
+      "task_id": "f1cefba8",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 268089,
+      "completion_tokens": 31575
+    },
+    {
+      "task_id": "f25fbde4",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 157303,
+      "completion_tokens": 16522
+    },
+    {
+      "task_id": "f25ffba3",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 115156,
+      "completion_tokens": 15168
+    },
+    {
+      "task_id": "f2829549",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 154458,
+      "completion_tokens": 27836
+    },
+    {
+      "task_id": "f35d900a",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 347826,
+      "completion_tokens": 36683
+    },
+    {
+      "task_id": "f5b8619d",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 166794,
+      "completion_tokens": 27173
+    },
+    {
+      "task_id": "f76d97a5",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 161361,
+      "completion_tokens": 29973
+    },
+    {
+      "task_id": "f8a8fe49",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 248711,
+      "completion_tokens": 30294
+    },
+    {
+      "task_id": "f8b3ba0a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 168482,
+      "completion_tokens": 20244
+    },
+    {
+      "task_id": "f8c80d96",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 248155,
+      "completion_tokens": 36852
+    },
+    {
+      "task_id": "f8ff0b80",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 115784,
+      "completion_tokens": 11525
+    },
+    {
+      "task_id": "f9012d9b",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 137150,
+      "completion_tokens": 22872
+    },
+    {
+      "task_id": "fafffa47",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 109309,
+      "completion_tokens": 13580
+    },
+    {
+      "task_id": "fcb5c309",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 180750,
+      "completion_tokens": 16974
+    },
+    {
+      "task_id": "fcc82909",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 147973,
+      "completion_tokens": 15693
+    },
+    {
+      "task_id": "feca6190",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 190231,
+      "completion_tokens": 21903
+    },
+    {
+      "task_id": "ff28f65a",
+      "test_index": 0,
+      "correct": true,
+      "error": null,
+      "prompt_tokens": 202272,
+      "completion_tokens": 28595
+    },
+    {
+      "task_id": "ff805c23",
+      "test_index": 0,
+      "correct": false,
+      "error": null,
+      "prompt_tokens": 369790,
+      "completion_tokens": 56333
+    }
+  ]
+}

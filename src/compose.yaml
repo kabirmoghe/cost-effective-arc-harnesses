@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    container_name: arc_evaluation
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: kabirmoghe
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: arc_evaluation
+
+    ports:
+      - "5433:5432" # Avoid clash with other app
+
+    volumes:
+      - arc_evaluation_data:/var/lib/postgresql/data   # named volume, persists across restarts
+      - ./init:/docker-entrypoint-initdb.d          # runs once on first boot only
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kabirmoghe -d arc_evaluation"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  arc_evaluation_data:

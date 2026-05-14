@@ -1,20 +1,35 @@
-# Senior Thesis Research: Retrieval-Augmented Agentic Systems for ARC AGI
+# Senior Thesis Research: Agentic Architectures for ARC AGI
 
-**Goal:** perform meta-review of high-performance open architectures on ARC AGI, use to inform own architecture
-**Scope:** (a) focus primarily on ARC AGI 1 and (b) if successful, move to ARC AGI 2
+**Goal:** Meta-review high-performance open architectures on ARC AGI, and use the findings to inform a custom architecture.
 
-## Plan / Timeline
+**Scope:** Focus on ARC AGI 1; extend to ARC AGI 2 if successful.
 
-1. Build baseline agent: follow architecture brainstorm in architecture (```architecture/baseline_agent.png```)
-2. Ensure functional on test inputs
-3. Perform evaluation
-4. **TBD**: iterate from here using meta-review, cutting-edge techniques to improve
+**Model:** All approaches use DeepSeek's `deepseek-chat` alias (currently DeepSeek V3.2, open-weight).
 
-## Loose Directory Structure
+## Approaches
 
-```
-arc_official_repo/          # ARC AGI 1 official repo for reference, contains official test/eval sets
-arc_sample_tooling_2023/    # Old repo from 2023 w/ example tooling (lot has changed since but may be decent high-level reference)
-architecture/               # personal architecture diagrams, e.g., for baseline agent, used to drive implementation specs
-src/                        # Agent implementation
+- **Baseline** — no-CoT few-shot. One LLM call per test pair.
+- **CoT** — few-shot with chain-of-thought reasoning.
+- **Pipeline** — two-stage agentic approach: N parallel pattern-explorer agents analyze training examples, then a transformation-definer agent synthesizes a `transform(grid)` Python function (with a repair loop on execution errors).
+
+All runs are tracked in a local Postgres database; per-agent JSON output is also written to disk.
+
+## Current Results
+
+Single-attempt (pass@1), `temperature=0`, DeepSeek V3.2.
+
+| Approach | Train acc | Eval acc | Eval $/task |
+| --- | --- | --- | --- |
+| Baseline (no-CoT) | 28.8% | 15.5% | $0.0017 |
+| CoT | 31.0% | 16.5% | $0.0025 |
+| Pipeline (3 explorers + definer) | 64.5% | 44.0% | $0.0596 |
+
+## Directory Structure
+
+```text
+arc_official_repo/          # Official ARC AGI 1 repo: training/evaluation task sets
+arc_sample_tooling_2023/    # Reference tooling from 2023 (outdated)
+architecture/               # Architecture diagrams
+archive/                    # Deprecated code and pre-DB pipeline outputs
+src/                        # Implementation: shared/, baseline/, CoT/, pipeline/, database/, metrics/
 ```

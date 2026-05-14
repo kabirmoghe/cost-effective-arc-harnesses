@@ -1,0 +1,15 @@
+{
+  "split": "evaluation",
+  "model": "deepseek-chat",
+  "approach": "pipeline",
+  "total": 419,
+  "total_tasks": 400,
+  "correct": 191,
+  "errors": 4,
+  "accuracy": 0.45584725536992843,
+  "token_usage": {
+    "prompt_tokens": 72232953,
+    "completion_tokens": 8650704,
+    "total_tokens": 80883657
+  }
+}

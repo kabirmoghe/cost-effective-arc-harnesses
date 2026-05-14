@@ -14,3 +14,7 @@ wheels/
 arc_sample_tooling_2023/
 *.excalidraw
 src/.env
+.DS_Store
+
+# images
+*.png

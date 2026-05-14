@@ -1,0 +1,14 @@
+{
+  "split": "training",
+  "model": "deepseek-chat",
+  "baseline": "cot",
+  "total": 416,
+  "correct": 129,
+  "errors": 8,
+  "accuracy": 0.31009615384615385,
+  "token_usage": {
+    "prompt_tokens": 1248526,
+    "completion_tokens": 827368,
+    "total_tokens": 2075894
+  }
+}
