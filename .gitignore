@@ -9,6 +9,10 @@ wheels/
 # Virtual environments
 .venv
 
+# data
+*.csv
+*.json
+
 # Other
 *.md
 arc_sample_tooling_2023/

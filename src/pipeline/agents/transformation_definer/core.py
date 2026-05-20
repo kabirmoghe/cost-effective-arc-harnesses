@@ -4,6 +4,7 @@ import json
 from typing import Callable, Optional
 from openai import AsyncOpenAI
 
+from shared.llm import with_retry
 from shared.types import Task
 from shared.code_exec import execute_transformation
 from pipeline.agents.pattern_explorer.types import ExplorationResult
@@ -110,14 +111,17 @@ async def define_transformation(
         messages.extend(build_definer_messages(task, exploration_result, trace, warning=warning))
         _save_context(messages)
 
-        response = await client.chat.completions.create(
-            model=model,
-            messages=messages,
-            tools=TOOL_DEFINITIONS,
-            tool_choice="required",
-            temperature=temperature,
-            max_tokens=max_tokens,
-            extra_body=extra_body,
+        response = await with_retry(
+            lambda: client.chat.completions.create(
+                model=model,
+                messages=messages,
+                tools=TOOL_DEFINITIONS,
+                tool_choice="auto",  # "required" is unsupported by AtlasCloud FP8; "auto" works, system prompt + tools reliably steer to a call, and the loop handles a no-tool-call step gracefully.
+                temperature=temperature,
+                max_tokens=max_tokens,
+                extra_body=extra_body,
+            ),
+            attempts=3, base_delay=1.5, label="definer.step",
         )
 
         _accumulate_usage(usage, response)

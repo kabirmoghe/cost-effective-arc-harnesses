@@ -17,6 +17,8 @@ dependencies = [
     "python-dotenv>=1.2.1",
     "dotenv>=0.9.9",
     "psycopg2-binary>=2.9.12",
+    "matplotlib>=3.10.9",
+    "seaborn>=0.13.2",
 ]
 
 [project.optional-dependencies]

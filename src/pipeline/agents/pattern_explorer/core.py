@@ -4,6 +4,7 @@ import json
 from typing import Callable, Optional
 from openai import AsyncOpenAI
 
+from shared.llm import with_retry
 from shared.types import Task
 from .types import Pattern, TraceEntry, PatternDocument, ExplorationResult
 from .context.prompts import (
@@ -118,14 +119,17 @@ async def explore_patterns(
         messages.extend(build_explorer_messages(task, patterns, trace, warning=warning))
         _save_context(messages)
 
-        response = await client.chat.completions.create(
-            model=model,
-            messages=messages,
-            tools=TOOL_DEFINITIONS,
-            tool_choice="required",
-            temperature=temperature,
-            max_tokens=max_tokens,
-            extra_body=extra_body,
+        response = await with_retry(
+            lambda: client.chat.completions.create(
+                model=model,
+                messages=messages,
+                tools=TOOL_DEFINITIONS,
+                tool_choice="auto",  # "required" is unsupported by AtlasCloud FP8; "auto" works, system prompt + tools reliably steer to a call, and _parse_tool_calls handles a no-tool-call step gracefully.
+                temperature=temperature,
+                max_tokens=max_tokens,
+                extra_body=extra_body,
+            ),
+            attempts=3, base_delay=1.5, label=f"explorer.step",
         )
 
         _accumulate_usage(usage, response)
@@ -179,9 +183,22 @@ async def run_parallel_explorers(
             task, client, model, log_fn=prefixed_log, **kwargs
         )
 
-    docs = await asyncio.gather(*[_run_one(i) for i in range(num_explorers)])
+    raw = await asyncio.gather(
+        *[_run_one(i) for i in range(num_explorers)],
+        return_exceptions=True,
+    )
+    docs = []
+    for i, r in enumerate(raw):
+        if isinstance(r, BaseException):
+            base_log(f"  [explorer {i}] ❌ failed after retries: {type(r).__name__}: {str(r)[:120]}")
+            continue
+        docs.append(r)
+    if not docs:
+        # All explorers failed; surface the first exception so the task is
+        # flagged 💥 rather than silently producing an empty exploration.
+        raise next(r for r in raw if isinstance(r, BaseException))
 
     return ExplorationResult(
         task_id=task.task_id,
-        documents=list(docs),
+        documents=docs,
     )

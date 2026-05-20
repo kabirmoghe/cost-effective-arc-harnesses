@@ -1,6 +1,5 @@
 """CoT baseline runner for ARC tasks using DeepSeek."""
 
-import os
 import sys
 import json
 import threading
@@ -13,6 +12,7 @@ from openai import OpenAI
 from database.client import EvalClient
 from shared.types import Grid, Task
 from shared.loader import load_task, get_task_ids
+from shared.llm import create_client, get_default_model, get_extra_body
 from CoT.prompt import COT_SYSTEM_PROMPT, build_user_message
 from CoT.extract_response import extract_response
 
@@ -20,7 +20,7 @@ load_dotenv()
 
 _print_lock = threading.Lock()
 
-MAX_TOKENS = 8192
+MAX_TOKENS = 32768  # V3.2 via Novita/fp8 (cap 65K) — v7 probe saw up to 17.8K on hard tasks; 32K is safety margin.
 
 
 def log(msg: str = ""):
@@ -29,24 +29,18 @@ def log(msg: str = ""):
         print(msg, flush=True)
 
 
-def create_client() -> OpenAI:
-    return OpenAI(
-        api_key=os.environ["DEEPSEEK_API_KEY"],
-        base_url="https://api.deepseek.com",
-    )
+def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = False) -> tuple[str, dict]:
+    """Call the model for one test pair. Returns (raw_response, usage_dict).
 
-
-def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = False) -> tuple[Grid, dict]:
-    """Solve a single ARC task test case with CoT reasoning.
-
-    Returns (predicted_grid, usage_dict).
+    Parsing happens at the caller so the raw response can be saved even when
+    extract_response() raises.
     """
     user_msg = build_user_message(task, test_index)
     usage = {"prompt_tokens": 0, "completion_tokens": 0}
 
     if stream:
         resp_stream = client.chat.completions.create(
-            model="deepseek-chat",
+            model=get_default_model("openrouter"),
             messages=[
                 {"role": "system", "content": COT_SYSTEM_PROMPT},
                 {"role": "user", "content": user_msg},
@@ -54,6 +48,7 @@ def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = F
             temperature=0.0,
             max_tokens=MAX_TOKENS,
             response_format={"type": "json_object"},
+            extra_body=get_extra_body("openrouter"),
             stream=True,
             stream_options={"include_usage": True},
         )
@@ -76,7 +71,7 @@ def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = F
             sys.stdout.flush()
     else:
         resp = client.chat.completions.create(
-            model="deepseek-chat",
+            model=get_default_model("openrouter"),
             messages=[
                 {"role": "system", "content": COT_SYSTEM_PROMPT},
                 {"role": "user", "content": user_msg},
@@ -84,12 +79,13 @@ def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = F
             temperature=0.0,
             max_tokens=MAX_TOKENS,
             response_format={"type": "json_object"},
+            extra_body=get_extra_body("openrouter"),
         )
         raw = resp.choices[0].message.content
         usage["prompt_tokens"] = resp.usage.prompt_tokens
         usage["completion_tokens"] = resp.usage.completion_tokens
 
-    return extract_response(raw), usage
+    return raw, usage
 
 
 def _run_single(client: OpenAI, task_id: str, split: str) -> list[dict]:
@@ -97,27 +93,26 @@ def _run_single(client: OpenAI, task_id: str, split: str) -> list[dict]:
     task = load_task(task_id, split)
     results = []
     for test_idx in range(task.num_test):
+        raw = ""
+        usage = {"prompt_tokens": 0, "completion_tokens": 0}
+        match = False
+        error = None
         try:
-            predicted, usage = solve_task(client, task, test_idx)
+            raw, usage = solve_task(client, task, test_idx)
+            predicted = extract_response(raw)
             expected = task.test[test_idx].output
             match = predicted == expected
-            results.append({
-                "task_id": task_id,
-                "test_index": test_idx,
-                "correct": match,
-                "error": None,
-                "prompt_tokens": usage["prompt_tokens"],
-                "completion_tokens": usage["completion_tokens"],
-            })
         except Exception as e:
-            results.append({
-                "task_id": task_id,
-                "test_index": test_idx,
-                "correct": False,
-                "error": str(e),
-                "prompt_tokens": 0,
-                "completion_tokens": 0,
-            })
+            error = str(e)
+        results.append({
+            "task_id": task_id,
+            "test_index": test_idx,
+            "correct": match,
+            "error": error,
+            "prompt_tokens": usage["prompt_tokens"],
+            "completion_tokens": usage["completion_tokens"],
+            "raw_response": raw,
+        })
     return results
 
 
@@ -130,8 +125,8 @@ def evaluate(
     output_file: Optional[str] = None,
 ):
     """Evaluate CoT baseline on a set of tasks."""
-    log("Initializing DeepSeek client...")
-    client = create_client()
+    log("Initializing OpenRouter client (V3.2 via Novita FP8)...")
+    client = create_client("openrouter")
     log("Client ready.\n")
 
     if task_ids:
@@ -156,21 +151,28 @@ def evaluate(
             for test_idx in range(task.num_test):
                 total += 1
                 log(f"\n[{total}] Task {task_id} (test {test_idx})")
+                raw = ""
+                usage = {"prompt_tokens": 0, "completion_tokens": 0}
+                match = False
+                error = None
                 try:
-                    predicted, usage = solve_task(client, task, test_idx, stream=stream)
+                    raw, usage = solve_task(client, task, test_idx, stream=stream)
+                    predicted = extract_response(raw)
                     expected = task.test[test_idx].output
                     match = predicted == expected
+                except Exception as e:
+                    error = str(e)
+                if error:
+                    errors += 1
+                    log(f"  ERROR: {error}")
+                else:
                     if match:
                         correct += 1
                     status = "CORRECT" if match else "WRONG"
                     log(f"  Result: {status} | {usage['completion_tokens']}c tokens | Running: {correct}/{total} ({correct/total*100:.1f}%)")
-                    all_results.append({"task_id": task_id, "test_index": test_idx, "correct": match, "error": None,
-                                        "prompt_tokens": usage["prompt_tokens"], "completion_tokens": usage["completion_tokens"]})
-                except Exception as e:
-                    errors += 1
-                    log(f"  ERROR: {e}")
-                    all_results.append({"task_id": task_id, "test_index": test_idx, "correct": False, "error": str(e),
-                                        "prompt_tokens": 0, "completion_tokens": 0})
+                all_results.append({"task_id": task_id, "test_index": test_idx, "correct": match, "error": error,
+                                    "prompt_tokens": usage["prompt_tokens"], "completion_tokens": usage["completion_tokens"],
+                                    "raw_response": raw})
     else:
         # Parallel execution
         tasks_done = 0

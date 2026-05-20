@@ -125,10 +125,23 @@ async def _run_task(
         explorer_usage = exploration.total_usage
 
     log_fn(f"🔨 Running {num_definers} TransformationDefiner(s)...")
-    definer_results: list[TransformationResult] = await asyncio.gather(*[
-        define_transformation(task, exploration, client, model, max_steps=max_steps, log_fn=log_fn, extra_body=extra_body)
-        for _ in range(num_definers)
-    ])
+    raw_definer_results = await asyncio.gather(
+        *[
+            define_transformation(task, exploration, client, model, max_steps=max_steps, log_fn=log_fn, extra_body=extra_body)
+            for _ in range(num_definers)
+        ],
+        return_exceptions=True,
+    )
+    definer_results: list[TransformationResult] = []
+    for idx, r in enumerate(raw_definer_results):
+        if isinstance(r, BaseException):
+            log_fn(f"  ❌ definer {idx} failed after retries: {type(r).__name__}: {str(r)[:120]}")
+            continue
+        definer_results.append(r)
+    if not definer_results:
+        # All M definers failed: surface the first exception so the task is
+        # flagged 💥 and re-runnable, instead of silently producing a no-result.
+        raise next(r for r in raw_definer_results if isinstance(r, BaseException))
 
     definer_prompt = 0
     definer_completion = 0

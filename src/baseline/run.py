@@ -1,6 +1,5 @@
 """No-CoT few-shot baseline runner for ARC tasks using DeepSeek."""
 
-import os
 import sys
 import json
 import threading
@@ -13,6 +12,7 @@ from openai import OpenAI
 from database.client import EvalClient
 from shared.types import Grid, Task
 from shared.loader import load_task, get_task_ids
+from shared.llm import create_client, get_default_model, get_extra_body
 from baseline.prompt import BASELINE_SYSTEM_PROMPT, build_user_message
 from baseline.extract_response import extract_response
 
@@ -29,13 +29,6 @@ def log(msg: str = ""):
         print(msg, flush=True)
 
 
-def create_client() -> OpenAI:
-    return OpenAI(
-        api_key=os.environ["DEEPSEEK_API_KEY"],
-        base_url="https://api.deepseek.com",
-    )
-
-
 def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = False) -> tuple[Grid, dict]:
     """Solve a single ARC task test case with few-shot only (no CoT).
 
@@ -46,7 +39,7 @@ def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = F
 
     if stream:
         resp_stream = client.chat.completions.create(
-            model="deepseek-chat",
+            model=get_default_model("openrouter"),
             messages=[
                 {"role": "system", "content": BASELINE_SYSTEM_PROMPT},
                 {"role": "user", "content": user_msg},
@@ -54,6 +47,7 @@ def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = F
             temperature=0.0,
             max_tokens=MAX_TOKENS,
             response_format={"type": "json_object"},
+            extra_body=get_extra_body("openrouter"),
             stream=True,
             stream_options={"include_usage": True},
         )
@@ -76,7 +70,7 @@ def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = F
             sys.stdout.flush()
     else:
         resp = client.chat.completions.create(
-            model="deepseek-chat",
+            model=get_default_model("openrouter"),
             messages=[
                 {"role": "system", "content": BASELINE_SYSTEM_PROMPT},
                 {"role": "user", "content": user_msg},
@@ -84,6 +78,7 @@ def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = F
             temperature=0.0,
             max_tokens=MAX_TOKENS,
             response_format={"type": "json_object"},
+            extra_body=get_extra_body("openrouter"),
         )
         raw = resp.choices[0].message.content
         usage["prompt_tokens"] = resp.usage.prompt_tokens
@@ -130,8 +125,8 @@ def evaluate(
     output_file: Optional[str] = None,
 ):
     """Evaluate no-CoT baseline on a set of tasks."""
-    log("Initializing DeepSeek client...")
-    client = create_client()
+    log("Initializing OpenRouter client (V3.2 via Novita FP8)...")
+    client = create_client("openrouter")
     log("Client ready.\n")
 
     if task_ids:
