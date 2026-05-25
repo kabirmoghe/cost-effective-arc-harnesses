@@ -10,6 +10,15 @@ A "candidate" is one definer's transformation. Selection:
 Two adapters build the common CandidateView: candidate_from_result (live
 TransformationResult objects, used by the pipeline runner) and
 candidate_from_output (definer `output` JSON, used by DB metrics).
+
+**B5 note:** for definers with multiple refinement attempts, the top-level
+TransformationResult fields (`code`, `test_results`, `train_num_*`, etc.) are
+populated by the definer driver from `best_attempt()` — the attempt with the
+highest train-score (ties broken by later iter). So both adapters get the
+best-by-train candidate "for free" via the top-level fields; no explicit
+attempts handling needed here. The full attempts history lives in
+`result.attempts` / `output["attempts"]` for post-hoc analysis (e.g.
+final-vs-best diagnostic).
 """
 
 from __future__ import annotations

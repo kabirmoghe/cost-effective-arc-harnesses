@@ -80,9 +80,18 @@ def build_definer_messages(
     task: Task,
     exploration_result: ExplorationResult,
     trace: list[TraceEntry],
-    warning: str | None = None,
+    warnings: list[str] | None = None,
 ) -> list[dict]:
-    """Build the full message list (excluding system prompt) for the definer loop."""
+    """Build the full message list (excluding system prompt) for the definer loop.
+
+    `warnings` is an ordered list of transient user-directed notices to append
+    after the trace as a single user message (joined with blank lines). Order
+    is set by the caller; convention is:
+        [exec_error_if_any, train_feedback_if_phase2, urgency_if_low]
+
+    Concat-to-string happens here, not in the caller, so the loop stays free
+    of presentation logic and warning order is captured in one place.
+    """
     examples_content = "\n\n".join([
         "Here are the task's training examples:",
         format_task_examples(task),
@@ -94,7 +103,9 @@ def build_definer_messages(
     ]
     messages.extend(_build_trace_messages(trace))
 
-    if warning:
-        messages.append({"role": "user", "content": warning})
+    if warnings:
+        joined = "\n\n".join(w for w in warnings if w)
+        if joined:
+            messages.append({"role": "user", "content": joined})
 
     return messages

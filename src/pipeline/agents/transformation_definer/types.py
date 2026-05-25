@@ -27,6 +27,49 @@ class TestPairResult:
 
 
 @dataclass
+class TrainPairResult:
+    """Result of applying the transform to one training pair. Used for the
+    refinement feedback loop (B5) — captures the predicted output and any
+    error so we can show the model what it produced vs. what was expected."""
+    pair_index: int
+    input_grid: Grid | None = None
+    expected_output: Grid | None = None
+    predicted_output: Grid | None = None
+    correct: bool | None = None
+    error: str | None = None
+
+
+@dataclass
+class Attempt:
+    """One `define_transformation` call that executed cleanly and got a
+    train-score. Failed defines (execution errors that were repaired) are
+    NOT logged as Attempts — they're transient and tracked via `repair_attempts`.
+
+    Attempts are logged in order; the M-selection layer picks
+    `max(attempts, key=lambda a: (a.train_score, a.iter))` for downstream
+    pass@k aggregation.
+    """
+    iter: int  # 0 = Phase 1 first clean define; 1, 2 = refinement iterations
+    phase: str  # "phase1" or "refinement"
+    code: str
+    transformation_summary: str = ""
+    reasoning: str = ""
+    test_results: list[TestPairResult] = field(default_factory=list)
+    train_results: list[TrainPairResult] = field(default_factory=list)
+    train_num_correct: int = 0
+    train_num_total: int = 0
+    final_error: str | None = None
+
+    @property
+    def train_score(self) -> float:
+        return self.train_num_correct / self.train_num_total if self.train_num_total else 0.0
+
+    @property
+    def is_clean(self) -> bool:
+        return self.final_error is None and self.code != ""
+
+
+@dataclass
 class TransformationResult:
     """Output of the Transformation Definer agent."""
     # Identity
@@ -50,12 +93,19 @@ class TransformationResult:
     max_repairs: int = 3
     final_error: str | None = None
 
-    # Evaluation (per test pair)
+    # Evaluation (per test pair) — mirrors the best Attempt for backward compat
     test_results: list[TestPairResult] = field(default_factory=list)
 
-    # Training-set score — ranking signal for pass@k selection across M definers
+    # Training-set score — ranking signal for pass@k selection across M definers.
+    # Mirrors the best Attempt's score for backward compat with B4 consumers.
     train_num_correct: int = 0
     train_num_total: int = 0
+
+    # B5: history of every clean-executing define from Phase 1 + Phase 2.
+    # `code`/`test_results`/`train_num_*`/`final_error` etc above are populated
+    # from `best_attempt()` at the end of `define_transformation()`; `attempts`
+    # carries the full trajectory for the selection layer and post-hoc analysis.
+    attempts: list[Attempt] = field(default_factory=list)
 
     # Metrics
     usage: dict = field(default_factory=lambda: {"prompt_tokens": 0, "completion_tokens": 0})
@@ -77,6 +127,12 @@ class TransformationResult:
     @property
     def num_correct(self) -> int:
         return sum(1 for r in self.test_results if r.correct)
+
+    def best_attempt(self) -> Attempt | None:
+        """Best-by-train-score across attempts, ties broken by later iter."""
+        if not self.attempts:
+            return None
+        return max(self.attempts, key=lambda a: (a.train_score, a.iter))
 
     def to_markdown(self) -> str:
         title = f"# TransformationDefiner: {self.task_id}"
@@ -173,6 +229,22 @@ class TransformationResult:
     def from_dict(cls, data: dict[str, Any]) -> "TransformationResult":
         trace = [TraceEntry(**t) for t in data.get("trace", [])]
         test_results = [TestPairResult(**t) for t in data.get("test_results", [])]
+        attempts = []
+        for a in data.get("attempts", []):
+            a_test = [TestPairResult(**t) for t in a.get("test_results", [])]
+            a_train = [TrainPairResult(**t) for t in a.get("train_results", [])]
+            attempts.append(Attempt(
+                iter=a.get("iter", 0),
+                phase=a.get("phase", "phase1"),
+                code=a.get("code", ""),
+                transformation_summary=a.get("transformation_summary", ""),
+                reasoning=a.get("reasoning", ""),
+                test_results=a_test,
+                train_results=a_train,
+                train_num_correct=a.get("train_num_correct", 0),
+                train_num_total=a.get("train_num_total", 0),
+                final_error=a.get("final_error"),
+            ))
         data.pop("success", None)
         data.pop("correct", None)
         data.pop("num_correct", None)
@@ -193,5 +265,6 @@ class TransformationResult:
             test_results=test_results,
             train_num_correct=data.get("train_num_correct", 0),
             train_num_total=data.get("train_num_total", 0),
+            attempts=attempts,
             usage=data.get("usage", {"prompt_tokens": 0, "completion_tokens": 0}),
         )

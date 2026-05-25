@@ -83,6 +83,7 @@ async def _run_task(
     exploration: ExplorationResult | None = None,
     parent_explorer_ids: list[str] | None = None,
     extra_body: dict | None = None,
+    enable_refinement: bool = False,
 ) -> dict:
     """Run N parallel explorers (or reuse hydrated findings) then M parallel definers."""
     task = load_task(task_id, split)
@@ -127,7 +128,7 @@ async def _run_task(
     log_fn(f"🔨 Running {num_definers} TransformationDefiner(s)...")
     raw_definer_results = await asyncio.gather(
         *[
-            define_transformation(task, exploration, client, model, max_steps=max_steps, log_fn=log_fn, extra_body=extra_body)
+            define_transformation(task, exploration, client, model, max_steps=max_steps, log_fn=log_fn, extra_body=extra_body, enable_refinement=enable_refinement)
             for _ in range(num_definers)
         ],
         return_exceptions=True,
@@ -176,6 +177,45 @@ async def _run_task(
                 "train_num_correct": definer_result.train_num_correct,
                 "train_num_total": definer_result.train_num_total,
                 "final_error": definer_result.final_error,
+                # B5: full attempt history. Top-level fields above mirror the
+                # best-by-train attempt (selected by the definer driver) for
+                # backward compat; consumers wanting the full trajectory read
+                # `attempts`. Empty list for definers that produced no clean
+                # define (degenerate) or for B4-style single-attempt runs.
+                "attempts": [
+                    {
+                        "iter": a.iter,
+                        "phase": a.phase,
+                        "code": a.code,
+                        "transformation_summary": a.transformation_summary,
+                        "reasoning": a.reasoning,
+                        "test_results": [
+                            {
+                                "test_index": tr.test_index,
+                                "predicted_output": tr.predicted_output,
+                                "expected_output": tr.expected_output,
+                                "correct": tr.correct,
+                                "error": tr.error,
+                            }
+                            for tr in a.test_results
+                        ],
+                        "train_results": [
+                            {
+                                "pair_index": tr.pair_index,
+                                "input_grid": tr.input_grid,
+                                "expected_output": tr.expected_output,
+                                "predicted_output": tr.predicted_output,
+                                "correct": tr.correct,
+                                "error": tr.error,
+                            }
+                            for tr in a.train_results
+                        ],
+                        "train_num_correct": a.train_num_correct,
+                        "train_num_total": a.train_num_total,
+                        "final_error": a.final_error,
+                    }
+                    for a in definer_result.attempts
+                ],
             }
             metadata = {
                 "model": definer_result.model,
@@ -228,6 +268,7 @@ async def run(
     quiet: bool = False,
     resume: bool = False,
     from_explorers: Optional[str] = None,
+    enable_refinement: bool = False,
 ):
     """Run pipeline on tasks."""
     if resume and not run_id:
@@ -309,6 +350,7 @@ async def run(
                     num_explorers, num_definers, max_steps, task_log, db=db,
                     exploration=exploration, parent_explorer_ids=parent_ids,
                     extra_body=extra_body,
+                    enable_refinement=enable_refinement,
                 )
                 if result["transformation_correct"]:
                     tag, completed["correct"] = "✅", completed["correct"] + 1
@@ -395,6 +437,7 @@ if __name__ == "__main__":
     parser.add_argument("--run-id", type=str, default=None)
     parser.add_argument("--quiet", action="store_true", help="Only show per-task results on console (detailed logs still written to files)")
     parser.add_argument("--resume", action="store_true", help="Skip tasks that already have transformation_definer output (requires --run-id)")
+    parser.add_argument("--definer-refinement", action="store_true", help="B5: enable train-feedback refinement loop in the definer (up to 2 refinements after the initial define, with train-failure feedback shown to the model). Off by default (B4 behavior).")
     args = parser.parse_args()
 
     task_ids = [args.task] if args.task else None
@@ -413,4 +456,5 @@ if __name__ == "__main__":
         quiet=args.quiet,
         resume=args.resume,
         from_explorers=args.from_explorers,
+        enable_refinement=args.definer_refinement,
     ))
