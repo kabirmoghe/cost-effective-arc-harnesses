@@ -84,8 +84,17 @@ async def _run_task(
     parent_explorer_ids: list[str] | None = None,
     extra_body: dict | None = None,
     enable_refinement: bool = False,
+    explorers_only: bool = False,
+    explorer_temperature: float = 0.0,
+    ablation: str | None = None,
 ) -> dict:
-    """Run N parallel explorers (or reuse hydrated findings) then M parallel definers."""
+    """Run N parallel explorers (or reuse hydrated findings) then M parallel definers.
+
+    If `explorers_only` is True, the definer phase is skipped — explorer findings
+    are saved to disk + DB and the task returns immediately. Used for cheap
+    `--from-explorers` source runs in N×t sweeps where we want to share one
+    explorer pass across multiple downstream definer configurations.
+    """
     task = load_task(task_id, split)
     reused = exploration is not None
 
@@ -102,6 +111,7 @@ async def _run_task(
             max_steps=max_steps,
             log_fn=log_fn,
             extra_body=extra_body,
+            temperature=explorer_temperature,
         )
         exploration.run_id = run_id
         explorer_ids = []
@@ -125,10 +135,49 @@ async def _run_task(
                     explorer_ids.append(exp_id)
         explorer_usage = exploration.total_usage
 
+    if explorers_only:
+        # Definer phase skipped — explorer findings are now in disk + DB ready
+        # for downstream `--from-explorers <run_id>` consumers. Return a result
+        # shape that lets the caller distinguish this from a full pipeline run.
+        log_fn(f"📚 Explorer-only mode: {len(exploration.documents)} explorer(s) saved, "
+               f"skipping definer phase")
+        return {
+            "task_id": task_id,
+            "run_id": run_id,
+            "num_explorers": len(exploration.documents),
+            "num_definers": 0,
+            "patterns_per_explorer": [len(d.patterns) for d in exploration.documents],
+            "files": saved_paths,
+            "prompt_tokens": explorer_usage["prompt_tokens"],
+            "completion_tokens": explorer_usage["completion_tokens"],
+            "explorer_only": True,
+            # Definer-related fields kept present (with neutral values) so the
+            # outer summary aggregation logic doesn't need explorer-only branches.
+            "transformation_correct": None,
+            "pass_at_1": False,
+            "pass_at_2": False,
+            "selection": None,
+            "num_test_pairs": 0,
+            "transformation_error": None,
+            "error": None,
+        }
+
     log_fn(f"🔨 Running {num_definers} TransformationDefiner(s)...")
+    # Map --ablation flag (CLI-friendly hyphens) to the definer_variant value.
+    # Default: "react" (standard B4/B5b). Currently the only ablation is
+    # "act-only" (think tool removed). Add new ablations here as they land.
+    _ablation_to_variant = {None: "react", "act-only": "act_only"}
+    if ablation not in _ablation_to_variant:
+        raise ValueError(f"Unknown --ablation value: {ablation!r}. Choices: {list(_ablation_to_variant)}")
+    definer_variant = _ablation_to_variant[ablation]
     raw_definer_results = await asyncio.gather(
         *[
-            define_transformation(task, exploration, client, model, max_steps=max_steps, log_fn=log_fn, extra_body=extra_body, enable_refinement=enable_refinement)
+            define_transformation(
+                task, exploration, client, model,
+                max_steps=max_steps, log_fn=log_fn, extra_body=extra_body,
+                enable_refinement=enable_refinement,
+                definer_variant=definer_variant,
+            )
             for _ in range(num_definers)
         ],
         return_exceptions=True,
@@ -160,7 +209,7 @@ async def _run_task(
                 "code": definer_result.code,
                 "reasoning": definer_result.reasoning,
                 "transformation_summary": definer_result.transformation_summary,
-                "trace": [{"kind": t.kind, "content": t.content} for t in definer_result.trace],
+                "trace": [{"kind": t.kind, "content": t.content, "args": t.args} for t in definer_result.trace],
                 "test_results": [
                     {
                         "test_index": tr.test_index,
@@ -269,6 +318,9 @@ async def run(
     resume: bool = False,
     from_explorers: Optional[str] = None,
     enable_refinement: bool = False,
+    explorers_only: bool = False,
+    explorer_temperature: float = 0.0,
+    ablation: str | None = None,
 ):
     """Run pipeline on tasks."""
     if resume and not run_id:
@@ -280,6 +332,11 @@ async def run(
         raise ValueError(
             "--from-explorers must differ from --run-id: reusing a run's explorer "
             "findings must produce a separate run, never write back into the source."
+        )
+    if explorers_only and from_explorers:
+        raise ValueError(
+            "--explorers-only and --from-explorers are mutually exclusive: "
+            "explorer-only mode produces explorer findings, definer-only mode consumes them."
         )
 
     client = create_async_client(provider)
@@ -320,10 +377,14 @@ async def run(
         ids = [tid for tid in ids if tid in hydrated]
 
     if resume:
+        # Different run modes write different per-task artifacts; check the right one.
+        # Explorer-only runs write `pattern_explorer_*.json`; full and definer-only
+        # runs write `transformation_definer_*.json`.
+        artifact_glob = "pattern_explorer_*.json" if explorers_only else "transformation_definer_*.json"
         already_done = set()
         for tid in ids:
             td = task_dir(out_path, run_id, tid)
-            if td.is_dir() and list(td.glob("transformation_definer_*.json")):
+            if td.is_dir() and list(td.glob(artifact_glob)):
                 already_done.add(tid)
         if already_done:
             ids = [tid for tid in ids if tid not in already_done]
@@ -331,13 +392,15 @@ async def run(
 
     if from_explorers:
         _console(f"Run {run_id} | definer-only re-run from {from_explorers} | {model_name} | {len(ids)} tasks | {num_definers} definers/task | max_concurrent={max_concurrent_tasks}")
+    elif explorers_only:
+        _console(f"Run {run_id} | EXPLORER-ONLY | {model_name} | {len(ids)} tasks | N={num_explorers} explorers @ t={explorer_temperature} | max_concurrent={max_concurrent_tasks}")
     else:
-        _console(f"Run {run_id} | {model_name} | {len(ids)} tasks | {num_explorers} explorers + {num_definers} definers/task | max_concurrent={max_concurrent_tasks}")
+        _console(f"Run {run_id} | {model_name} | {len(ids)} tasks | {num_explorers} explorers @ t={explorer_temperature} + {num_definers} definers/task | max_concurrent={max_concurrent_tasks}")
     _console(f"Logs: {log_dir.resolve()}")
     _console()
 
     semaphore = asyncio.Semaphore(max_concurrent_tasks)
-    completed = {"correct": 0, "incorrect": 0, "error": 0}
+    completed = {"correct": 0, "incorrect": 0, "error": 0, "explored": 0}
 
     async def _guarded(task_id: str) -> dict:
         task_log = TaskLogger(task_id, log_dir, quiet=quiet)
@@ -351,13 +414,20 @@ async def run(
                     exploration=exploration, parent_explorer_ids=parent_ids,
                     extra_body=extra_body,
                     enable_refinement=enable_refinement,
+                    explorers_only=explorers_only,
+                    explorer_temperature=explorer_temperature,
+                    ablation=ablation,
                 )
-                if result["transformation_correct"]:
-                    tag, completed["correct"] = "✅", completed["correct"] + 1
-                else:
-                    tag, completed["incorrect"] = "❌", completed["incorrect"] + 1
                 tokens = result["prompt_tokens"] + result["completion_tokens"]
-                _console(f"  {tag} {task_id} | {tokens:,} tokens")
+                if result.get("explorer_only"):
+                    completed["explored"] += 1
+                    _console(f"  📚 {task_id} | {tokens:,} tokens")
+                elif result["transformation_correct"]:
+                    completed["correct"] += 1
+                    _console(f"  ✅ {task_id} | {tokens:,} tokens")
+                else:
+                    completed["incorrect"] += 1
+                    _console(f"  ❌ {task_id} | {tokens:,} tokens")
                 return result
         except Exception as e:
             completed["error"] = completed["error"] + 1
@@ -379,8 +449,13 @@ async def run(
     total_completion = sum(r["completion_tokens"] for r in all_results)
 
     _console()
-    _console(f"Done: {completed['correct']}✅ {completed['incorrect']}❌ {completed['error']}💥  ({len(all_results)} tasks)")
+    if explorers_only:
+        _console(f"Done: {completed['explored']}📚 {completed['error']}💥  ({len(all_results)} tasks)")
+    else:
+        _console(f"Done: {completed['correct']}✅ {completed['incorrect']}❌ {completed['error']}💥  ({len(all_results)} tasks)")
     _console(f"Tokens: {total_prompt + total_completion:,} ({total_prompt:,} prompt + {total_completion:,} completion)")
+
+    mode = "explorer_only" if explorers_only else ("definer_only" if from_explorers else "full")
 
     summary = {
         "run_id": run_id,
@@ -388,13 +463,15 @@ async def run(
         "model": model_name,
         "provider": provider,
         "num_explorers": num_explorers,
-        "num_definers": num_definers,
+        "num_definers": 0 if explorers_only else num_definers,
+        "explorer_temperature": explorer_temperature,
         "max_steps": max_steps,
-        "mode": "definer_only" if from_explorers else "full",
+        "mode": mode,
         "source_explorer_run_id": from_explorers,
         "total_tasks": len(all_results),
         "correct": completed["correct"],
         "incorrect": completed["incorrect"],
+        "explored": completed["explored"],
         "errors": completed["error"],
         "pass_at_1": sum(1 for r in all_results if r.get("pass_at_1")),
         "pass_at_2": sum(1 for r in all_results if r.get("pass_at_2")),
@@ -409,10 +486,16 @@ async def run(
     summary_path.write_text(json.dumps(summary, indent=2))
     _console(f"Summary: {summary_path}")
 
-    extra = {"num_definers": num_definers}
+    extra = {
+        "num_definers": 0 if explorers_only else num_definers,
+        "num_explorers": num_explorers,
+        "explorer_temperature": explorer_temperature,
+        "mode": mode,
+    }
     if from_explorers:
-        extra["mode"] = "definer_only"
         extra["source_explorer_run_id"] = from_explorers
+    if ablation is not None:
+        extra["ablation"] = ablation
     db.finalize_pipeline_run(run_id, extra=extra)
     db.close()
 
@@ -431,13 +514,16 @@ if __name__ == "__main__":
     parser.add_argument("--from-explorers", type=str, default=None, help="Definer-only re-run: reuse explorer findings from this source run_id, skipping the exploration phase (must differ from --run-id)")
     parser.add_argument("--max-concurrent-tasks", type=int, default=4)
     parser.add_argument("--output", type=str, default="output/pipeline")
-    parser.add_argument("--provider", type=str, default="deepseek", choices=["deepseek", "openai", "openrouter"])
+    parser.add_argument("--provider", type=str, default="deepseek", choices=["deepseek", "openai", "openrouter", "openrouter-friendli"])
     parser.add_argument("--model", type=str, default=None)
     parser.add_argument("--max-steps", type=int, default=10)
     parser.add_argument("--run-id", type=str, default=None)
     parser.add_argument("--quiet", action="store_true", help="Only show per-task results on console (detailed logs still written to files)")
     parser.add_argument("--resume", action="store_true", help="Skip tasks that already have transformation_definer output (requires --run-id)")
     parser.add_argument("--definer-refinement", action="store_true", help="B5: enable train-feedback refinement loop in the definer (up to 2 refinements after the initial define, with train-failure feedback shown to the model). Off by default (B4 behavior).")
+    parser.add_argument("--explorers-only", action="store_true", help="Run only the explorer phase: N explorers per task, save findings to disk + DB, then exit (no definer fan-out). Used to produce reusable explorer sets for downstream --from-explorers definer-only re-runs. Mutually exclusive with --from-explorers.")
+    parser.add_argument("--explorer-temperature", type=float, default=0.0, help="Sampling temperature for the explorer phase. Default 0.0 (deterministic). Higher values inject diversity across N parallel explorers.")
+    parser.add_argument("--ablation", type=str, default=None, choices=["act-only"], help="Run a definer ablation variant. 'act-only' = remove `think` tool from the definer (both Phase 1 and Phase 2). Stored in evals.data['ablation'] for downstream filtering.")
     args = parser.parse_args()
 
     task_ids = [args.task] if args.task else None
@@ -457,4 +543,7 @@ if __name__ == "__main__":
         resume=args.resume,
         from_explorers=args.from_explorers,
         enable_refinement=args.definer_refinement,
+        explorers_only=args.explorers_only,
+        explorer_temperature=args.explorer_temperature,
+        ablation=args.ablation,
     ))

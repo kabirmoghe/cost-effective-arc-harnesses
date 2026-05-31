@@ -46,6 +46,16 @@ PROVIDERS = {
         # quality — reinforces the decision to pin away from novita/fp8 here.
         "or_provider": "atlas-cloud/fp8",
     },
+    # Friendli native bf16 — kept as the headline-defensible non-quantized backend
+    # for the final B7 thesis number. ~4× cost of AtlasCloud FP8 on output side,
+    # ~1.5× end-to-end (per the prompt-heavy 87/13 workload). Use for the
+    # canonical pass@2 reporting, not for exploration sweeps.
+    "openrouter-friendli": {
+        "env_key": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "default_model": "deepseek/deepseek-v3.2",
+        "or_provider": "friendli",
+    },
 }
 
 

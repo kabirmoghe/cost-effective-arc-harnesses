@@ -12,8 +12,24 @@ Grid = List[List[int]]
 
 @dataclass
 class TraceEntry:
-    kind: str  # "think" or "define_transformation"
+    # Tool-call entries: "think", "define_transformation",
+    #   "submit_refined_transformation" — render as assistant tool_call + tool result.
+    # User-message entries: "user_message" — render as a plain user-role message
+    #   in the conversation history. Used to anchor persistent context (e.g. the
+    #   Phase 2 train-failure feedback grids) at a fixed position so subsequent
+    #   think/submit entries naturally appear after it in the replay, instead of
+    #   leaking to the end via the transient `warnings` channel.
+    # Downstream consumers (e.g. orchestrator/) may use additional kind strings;
+    # this layer is permissive about kind and only acts on the four enumerated above.
+    kind: str
     content: str
+    # Optional full tool args. Set by `_parse_tool_calls` for submission tools
+    # so the trace replay can faithfully reconstruct the assistant's prior
+    # tool call (including the actual code, what_changed, etc.). For `think`
+    # and `user_message` this stays empty. Backward-compatible default:
+    # disk-stored records without `args` deserialize fine; rendering falls
+    # back to `content` when args is empty.
+    args: dict = field(default_factory=dict)
 
 
 @dataclass
@@ -50,7 +66,7 @@ class Attempt:
     pass@k aggregation.
     """
     iter: int  # 0 = Phase 1 first clean define; 1, 2 = refinement iterations
-    phase: str  # "phase1" or "refinement"
+    phase: str  # "phase1" or "refinement" (downstream consumers may use other values)
     code: str
     transformation_summary: str = ""
     reasoning: str = ""
@@ -213,6 +229,11 @@ class TransformationResult:
                     lines.append(f"- 💭 **Think:** {entry.content}")
                 elif entry.kind == "define_transformation":
                     lines.append(f"- 🎯 **Define:** {entry.content}")
+                elif entry.kind == "submit_refined_transformation":
+                    lines.append(f"- 🔁 **Refine:** {entry.content}")
+                elif entry.kind == "user_message":
+                    snippet = entry.content[:240].replace("\n", " ")
+                    lines.append(f"- 📨 **User:** {snippet}...")
             lines.append("")
 
         return "\n".join(lines)

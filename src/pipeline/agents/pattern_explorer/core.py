@@ -89,13 +89,27 @@ async def explore_patterns(
     temperature: float = 0.0,
     log_fn: Optional[Callable[[str], None]] = None,
     extra_body: Optional[dict] = None,
+    system_prompt: Optional[str] = None,
+    guidance: Optional[str] = None,
 ) -> PatternDocument:
     """Run the pattern exploration loop on a task.
+
+    Optional B8 overrides:
+      - `system_prompt`: replace the default explorer SYSTEM_PROMPT (e.g., with
+        SYSTEM_PROMPT_FOCUSED for orchestrator-spawned mid-loop explorers).
+      - `guidance`: a string from an upstream agent. Surfaced as a fixed user
+        message after the system prompt on every step (and during synthesis),
+        so the explorer's context always carries the guidance at the top.
 
     Returns:
         PatternDocument with discovered patterns, trace, and synthesis.
     """
     _log = log_fn or _noop
+    sys_prompt = system_prompt if system_prompt is not None else SYSTEM_PROMPT
+    guidance_msg = (
+        {"role": "user", "content": f"Upstream guidance (read first): {guidance}"}
+        if guidance else None
+    )
     trace: list[TraceEntry] = []
     patterns: list[Pattern] = []
     usage = {"prompt_tokens": 0, "completion_tokens": 0}
@@ -115,7 +129,9 @@ async def explore_patterns(
 
         _log(f"  Step {step + 1}/{max_steps} ({len(patterns)} patterns so far)")
 
-        messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+        messages = [{"role": "system", "content": sys_prompt}]
+        if guidance_msg:
+            messages.append(guidance_msg)
         messages.extend(build_explorer_messages(task, patterns, trace, warning=warning))
         _save_context(messages)
 
@@ -138,7 +154,9 @@ async def explore_patterns(
     # Synthesis phase
     _log(f"  🔬 Synthesizing ({len(patterns)} patterns, {len(trace)} trace entries)...")
 
-    messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+    messages = [{"role": "system", "content": sys_prompt}]
+    if guidance_msg:
+        messages.append(guidance_msg)
     messages.extend(build_explorer_messages(task, patterns, trace))
     messages.append({"role": "user", "content": SYNTHESIS_PROMPT})
     _save_context(messages)

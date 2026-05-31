@@ -1,4 +1,11 @@
-"""Context rendering helpers for the TransformationDefiner agent."""
+"""B8 — Orchestrator message construction.
+
+Mirrors `pipeline.agents.transformation_definer.context.rendering.build_definer_messages`
+but adds trace-replay branches for the two orchestrator-only TraceEntry kinds:
+`explore_new_patterns` and `done`. The body otherwise duplicates pipeline's
+rendering logic — this is conscious code duplication chosen over a pipeline
+extension hook (see D4 in the refactor plan).
+"""
 
 import json
 
@@ -26,7 +33,11 @@ def _format_exploration_findings(exploration_result: ExplorationResult) -> str:
 
 
 def _build_trace_messages(trace: list[TraceEntry]) -> list[dict]:
-    """Convert trace entries into assistant tool_call / tool response pairs."""
+    """Convert trace entries into assistant tool_call / tool response pairs.
+    Handles the 4 pipeline-shared kinds (think, define_transformation,
+    submit_refined_transformation, user_message) PLUS the 2 orchestrator-only
+    kinds (explore_new_patterns, done).
+    """
     messages = []
     for i, entry in enumerate(trace):
         call_id = f"trace_{i}"
@@ -51,10 +62,6 @@ def _build_trace_messages(trace: list[TraceEntry]) -> list[dict]:
             })
 
         elif entry.kind == "define_transformation":
-            # Use the full args dict (incl. actual code) when available; fall
-            # back to a content-only payload only for legacy traces that
-            # predate the args field. See feedback memory:
-            # trace-fidelity-in-agentic-replay.
             args = entry.args or {
                 "transformation_summary": entry.content,
                 "reasoning": "",
@@ -101,30 +108,64 @@ def _build_trace_messages(trace: list[TraceEntry]) -> list[dict]:
                 "content": "Refined transformation submitted for execution.",
             })
 
+        elif entry.kind == "explore_new_patterns":
+            args = entry.args or {"guidance": entry.content}
+            messages.append({
+                "role": "assistant",
+                "content": None,
+                "tool_calls": [{
+                    "id": call_id,
+                    "type": "function",
+                    "function": {
+                        "name": "explore_new_patterns",
+                        "arguments": json.dumps(args),
+                    },
+                }],
+            })
+            messages.append({
+                "role": "tool",
+                "tool_call_id": call_id,
+                "content": "Focused explorers dispatched; findings appended to context.",
+            })
+
+        elif entry.kind == "done":
+            args = entry.args or {"reason": entry.content}
+            messages.append({
+                "role": "assistant",
+                "content": None,
+                "tool_calls": [{
+                    "id": call_id,
+                    "type": "function",
+                    "function": {
+                        "name": "done",
+                        "arguments": json.dumps(args),
+                    },
+                }],
+            })
+            messages.append({
+                "role": "tool",
+                "tool_call_id": call_id,
+                "content": "Acknowledged.",
+            })
+
         elif entry.kind == "user_message":
-            # Plain user-role message inserted at a fixed point in the conversation.
-            # Used by Phase 2 to anchor the train-failure feedback grids so any
-            # subsequent think/submit entries naturally follow it in replay.
             messages.append({"role": "user", "content": entry.content})
 
     return messages
 
 
-def build_definer_messages(
+def build_orchestrator_messages(
     task: Task,
     exploration_result: ExplorationResult,
     trace: list[TraceEntry],
     warnings: list[str] | None = None,
 ) -> list[dict]:
-    """Build the full message list (excluding system prompt) for the definer loop.
+    """Build the full message list (excluding system prompt) for one iteration
+    of the orchestrator loop.
 
-    `warnings` is an ordered list of transient user-directed notices to append
-    after the trace as a single user message (joined with blank lines). Order
-    is set by the caller; convention is:
-        [exec_error_if_any, train_feedback_if_phase2, urgency_if_low]
-
-    Concat-to-string happens here, not in the caller, so the loop stays free
-    of presentation logic and warning order is captured in one place.
+    `warnings` is an ordered list of transient user-directed notices, appended
+    after the trace as a single user message (joined with blank lines). Mirrors
+    pipeline's contract.
     """
     examples_content = "\n\n".join([
         "Here are the task's training examples:",

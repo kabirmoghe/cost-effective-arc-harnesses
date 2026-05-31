@@ -1,4 +1,4 @@
-"""Train-set failure feedback rendering for the B5 refinement loop.
+"""Train-set failure feedback rendering for the B5b refinement loop.
 
 After the definer's `transform()` runs on the training pairs, any failing pair
 is formatted into a user-message block via `render_train_feedback`:
@@ -7,8 +7,13 @@ is formatted into a user-message block via `render_train_feedback`:
 Pre-computed diff (X-grid + cell list) is **off by default** — the model has
 input/expected/predicted and can compute the discrepancy itself. The diff
 helpers (`grid_diff_ascii`, `_list_diff_cells`) are kept in this module and
-exposed via `render_train_feedback(..., include_diff=True)` for a B5
+exposed via `render_train_feedback(..., include_diff=True)` for a B5b
 sub-ablation if richer feedback ever turns out to matter.
+
+This module is B5b-shaped: single-iteration refinement, no iteration
+counters in the user-facing text. The closing instruction frames the task
+as "refine, do not re-derive" without naming tools — the SYSTEM_PROMPT_B5B
+owns the tool description so this stays decoupled.
 """
 
 from __future__ import annotations
@@ -75,11 +80,9 @@ def _list_diff_cells(
 
 def render_train_feedback(
     failing_pairs: list[dict[str, Any]],
-    iteration: int,
-    max_iters: int,
     include_diff: bool = False,
 ) -> str:
-    """Build the user-message string for one refinement iteration.
+    """Build the user-message string for the B5b refinement phase.
 
     `failing_pairs` is a list of dicts, each with keys:
         pair_index : int                  (0-indexed train pair number)
@@ -88,28 +91,16 @@ def render_train_feedback(
         predicted  : Grid | None          (your transform's output, if it executed)
         error      : str | None           (set if your transform errored on this pair)
 
-    `iteration` is 1-indexed (1..max_iters). On the final iteration, prepend
-    an explicit "this is your final refinement attempt" note so the model knows
-    the selection contract.
+    `include_diff` (off by default): also include a visual X-diff grid + a
+    compact list of mismatched cells per pair. Held for a sub-ablation.
     """
-    is_final = iteration >= max_iters
-
     blocks: list[str] = []
-
-    if is_final:
-        blocks.append(
-            "Note: this is your final refinement attempt for this transformation. "
-            "After this, the version with the highest training-set score across all "
-            "attempts will be selected as your final answer."
-        )
 
     if failing_pairs:
         n_fail = len(failing_pairs)
         blocks.append(
             f"Your transform did not solve all training pairs "
-            f"(refinement attempt {iteration} of {max_iters}; "
-            f"{n_fail} pair{'s' if n_fail != 1 else ''} failed). "
-            f"Failing pair details below:"
+            f"({n_fail} pair{'s' if n_fail != 1 else ''} failed). Details below:"
         )
 
     for fp in failing_pairs:
@@ -117,7 +108,7 @@ def render_train_feedback(
         section: list[str] = [f"\n— Training pair {pair_idx + 1} —"]
 
         if fp.get("error"):
-            section.append(f"Your transform raised an execution error on this pair:")
+            section.append("Your transform raised an execution error on this pair:")
             section.append("```")
             section.append(str(fp["error"])[:800])
             section.append("```")
@@ -148,9 +139,8 @@ def render_train_feedback(
         blocks.append("\n".join(section))
 
     blocks.append(
-        "\nRefine your transform() function to handle these failures. "
-        "Use `think` to diagnose where the current logic goes wrong, then call "
-        "`define_transformation` with the corrected code."
+        "\nRefine your code to handle the failures above. "
+        "Make surgical changes — do not re-derive from scratch."
     )
 
     return "\n".join(blocks)

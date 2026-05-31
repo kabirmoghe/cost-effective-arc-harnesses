@@ -101,6 +101,7 @@ def _run_single(client: OpenAI, task_id: str, split: str) -> list[dict]:
                 "test_index": test_idx,
                 "correct": match,
                 "error": None,
+                "predicted": predicted,
                 "prompt_tokens": usage["prompt_tokens"],
                 "completion_tokens": usage["completion_tokens"],
             })
@@ -110,6 +111,7 @@ def _run_single(client: OpenAI, task_id: str, split: str) -> list[dict]:
                 "test_index": test_idx,
                 "correct": False,
                 "error": str(e),
+                "predicted": None,
                 "prompt_tokens": 0,
                 "completion_tokens": 0,
             })
@@ -159,11 +161,13 @@ def evaluate(
                     status = "CORRECT" if match else "WRONG"
                     log(f"  Result: {status} | {usage['completion_tokens']}c tokens | Running: {correct}/{total} ({correct/total*100:.1f}%)")
                     all_results.append({"task_id": task_id, "test_index": test_idx, "correct": match, "error": None,
+                                        "predicted": predicted,
                                         "prompt_tokens": usage["prompt_tokens"], "completion_tokens": usage["completion_tokens"]})
                 except Exception as e:
                     errors += 1
                     log(f"  ERROR: {e}")
                     all_results.append({"task_id": task_id, "test_index": test_idx, "correct": False, "error": str(e),
+                                        "predicted": None,
                                         "prompt_tokens": 0, "completion_tokens": 0})
     else:
         tasks_done = 0
@@ -199,6 +203,7 @@ def evaluate(
                     errors += 1
                     log(f"  [{tasks_done}/{total_tasks} tasks] {task_id}: EXCEPTION {e}")
                     all_results.append({"task_id": task_id, "test_index": 0, "correct": False, "error": str(e),
+                                        "predicted": None,
                                         "prompt_tokens": 0, "completion_tokens": 0})
 
     total_tests = len(all_results)
