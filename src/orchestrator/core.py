@@ -80,6 +80,7 @@ def _parse_tool_calls(
         return _ParsedToolCall(kind=None)
 
     action: _ParsedToolCall | None = None
+    unknown_names: list[str] = []
     for tc in message.tool_calls:
         try:
             args = json.loads(tc.function.arguments)
@@ -134,7 +135,19 @@ def _parse_tool_calls(
             if action is None:
                 action = _ParsedToolCall(kind="done", args=args)
 
-    return action or _ParsedToolCall(kind="think" if message.tool_calls else None)
+        else:
+            unknown_names.append(name)
+            log_fn(f"    ⚠ unknown tool call ignored: {name!r}")
+
+    if action is not None:
+        return action
+    # No action-shaped call. If any think happened, treat as a pure-think turn.
+    # If only unknown tools were called (no think, no action), route to None so
+    # the loop's no-tool-call branch warns + fuses on the 2nd consecutive offence.
+    has_think = any(e.kind == "think" for e in trace[-len(message.tool_calls):])
+    if has_think:
+        return _ParsedToolCall(kind="think")
+    return _ParsedToolCall(kind=None, args={"unknown_tool_names": unknown_names} if unknown_names else None)
 
 
 # ────────────────────────────────────────────────────────────────────
@@ -230,12 +243,21 @@ async def run_orchestrator(
                 _log(f"  🛑 fuse: two consecutive no-tool-call responses")
                 exit_reason = "no_tool_call"
                 break
-            pending_warnings.append(
-                "You did not call any tool in your last response. Plain-text "
-                "responses are not accepted. Call a tool now — `think`, "
-                "`define_transformation`, `submit_refined_transformation`, "
-                "`explore_new_patterns`, or `done`."
-            )
+            unknown = (call.args or {}).get("unknown_tool_names") if call.args else None
+            if unknown:
+                pending_warnings.append(
+                    f"You called {unknown!r}, which is not a recognized tool. "
+                    "Your available tools are: `think`, `define_transformation`, "
+                    "`submit_refined_transformation`, `explore_new_patterns`, `done`. "
+                    "Call one of those now."
+                )
+            else:
+                pending_warnings.append(
+                    "You did not call any tool in your last response. Plain-text "
+                    "responses are not accepted. Call a tool now — `think`, "
+                    "`define_transformation`, `submit_refined_transformation`, "
+                    "`explore_new_patterns`, or `done`."
+                )
             continue
         consecutive_no_tool_call = 0
 
@@ -259,8 +281,8 @@ async def run_orchestrator(
                 _log(f"  🚫 spawn budget exhausted ({MAX_SPAWN_CALLS}/{MAX_SPAWN_CALLS})")
                 pending_warnings.append(
                     f"Spawn budget exhausted ({MAX_SPAWN_CALLS} calls used) — "
-                    "You cannot not call `explore_new_patterns` again."
-                    "proceed with current findings. You may still refine, "
+                    "You cannot call `explore_new_patterns` again. "
+                    "Proceed with current findings. You may still refine, "
                     "define fresh, or call `done`."
                 )
                 continue
@@ -339,7 +361,9 @@ async def run_orchestrator(
 
     # ── Assemble result ──
     if attempts:
-        best = max(attempts, key=lambda a: (a.train_score, a.iter))
+        # Tiebreaker: lower `iter` wins (mirrors pipeline.selection's
+        # "lower agent_idx wins" convention — earlier achievement is preferred).
+        best = max(attempts, key=lambda a: (a.train_score, -a.iter))
         return OrchestratorResult(
             task_id=task.task_id,
             transformation_summary=best.transformation_summary,

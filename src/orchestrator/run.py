@@ -68,13 +68,20 @@ async def _run_task(
         return_exceptions=True,
     )
     definer_results: list[OrchestratorResult] = []
+    failures: list[tuple[int, BaseException]] = []
     for idx, r in enumerate(raw_definer_results):
         if isinstance(r, BaseException):
             log_fn(f"  ❌ definer {idx} failed after retries: {type(r).__name__}: {str(r)[:120]}")
+            failures.append((idx, r))
             continue
         definer_results.append(r)
     if not definer_results:
-        raise next(r for r in raw_definer_results if isinstance(r, BaseException))
+        summary = "; ".join(
+            f"definer {i}: {type(e).__name__}: {str(e)[:160]}" for i, e in failures
+        )
+        raise RuntimeError(
+            f"All {num_definers} orchestrator definers failed for task {task_id}. {summary}"
+        )
 
     definer_prompt = 0
     definer_completion = 0

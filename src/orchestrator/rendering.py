@@ -16,7 +16,7 @@ from pipeline.agents.pattern_explorer.types import ExplorationResult
 
 
 def _format_exploration_findings(exploration_result: ExplorationResult) -> str:
-    sections = ["Here are the findings from the PatternExplorer Agents:\n"]
+    sections = ["Here are the findings from the initial PatternExplorer Agent fleet:\n"]
     for i, doc in enumerate(exploration_result.documents):
         sections.append(f"## PatternExplorer {i + 1}")
         sections.append("")
