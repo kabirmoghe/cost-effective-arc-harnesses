@@ -1,0 +1,45 @@
+# Paper-figure matplotlib style.
+# Activate with: plt.style.use("src/figures/paper.mplstyle")
+# Or via the helper in src/figures/_style.py
+
+# ── Figure ──
+# Default fits a single-column LaTeX figure (~3.3in wide) scaled up for
+# readability. Override per-figure when going full-page or two-column.
+figure.figsize: 6.5, 4.0
+figure.dpi: 150
+savefig.dpi: 400
+savefig.bbox: tight
+
+# ── Font: Times to match the thesis body text ──
+font.family: serif
+font.serif: Times, Times New Roman, Nimbus Roman, Liberation Serif, DejaVu Serif
+mathtext.fontset: stix
+mathtext.rm: serif
+
+font.size: 10
+axes.titlesize: 12
+axes.labelsize: 10
+xtick.labelsize: 9
+ytick.labelsize: 9
+legend.fontsize: 9
+
+# ── Spines / grid ──
+axes.spines.top: False
+axes.spines.right: False
+axes.grid: True
+grid.alpha: 0.25
+grid.linewidth: 0.7
+grid.color: 0.5
+
+# ── Lines / markers ──
+lines.linewidth: 2
+lines.markersize: 7
+
+# ── Legend ──
+legend.frameon: False
+legend.borderpad: 0.4
+
+# ── Vector export hints ──
+pdf.fonttype: 42
+ps.fonttype: 42
+svg.fonttype: none
