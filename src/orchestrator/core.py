@@ -86,6 +86,9 @@ def _parse_tool_calls(
             args = json.loads(tc.function.arguments)
         except json.JSONDecodeError:
             continue
+        if not isinstance(args, dict):
+            log_fn(f"    ⚠ ignoring malformed tool args (got {type(args).__name__}, not dict)")
+            continue
 
         name = tc.function.name
         if name == "think":

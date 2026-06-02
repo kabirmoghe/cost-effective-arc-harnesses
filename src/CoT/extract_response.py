@@ -17,10 +17,17 @@ def extract_response(response: str) -> Grid:
     if "<｜end▁of▁thinking｜>" in text:
         text = text.rsplit("<｜end▁of▁thinking｜>", 1)[1].strip()
 
-    # Strip markdown code fences if present
+    # Strip markdown code fences if present (V3.2 / V4-flash style)
     match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
     if match:
         text = match.group(1)
+    elif not text.lstrip().startswith("{"):
+        # Kimi K2 style: reasoning prose followed by a raw JSON object with
+        # no markdown fences. Find the last balanced `{...}` block in the text.
+        last_open = text.rfind("{")
+        last_close = text.rfind("}")
+        if 0 <= last_open < last_close:
+            text = text[last_open:last_close + 1]
 
     # strict=False permits raw control characters inside JSON string values
     # (another V4-flash quirk — it emits literal `\n` inside `reasoning`).

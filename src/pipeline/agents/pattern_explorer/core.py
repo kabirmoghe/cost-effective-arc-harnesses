@@ -34,6 +34,12 @@ def _parse_tool_calls(
             args = json.loads(tc.function.arguments)
         except json.JSONDecodeError:
             continue
+        # Robustness: some providers return non-dict tool arguments (e.g. a
+        # bare string or list when the model malforms the JSON shape). Skip
+        # gracefully — the loop's no-tool-call fuse will catch repeats.
+        if not isinstance(args, dict):
+            log_fn(f"    ⚠ ignoring malformed tool args (got {type(args).__name__}, not dict)")
+            continue
 
         if tc.function.name == "think":
             thought = args.get("thought", "")
@@ -91,6 +97,7 @@ async def explore_patterns(
     extra_body: Optional[dict] = None,
     system_prompt: Optional[str] = None,
     guidance: Optional[str] = None,
+    tool_choice: str = "auto",
 ) -> PatternDocument:
     """Run the pattern exploration loop on a task.
 
@@ -140,7 +147,7 @@ async def explore_patterns(
                 model=model,
                 messages=messages,
                 tools=TOOL_DEFINITIONS,
-                tool_choice="auto",  # "required" is unsupported by AtlasCloud FP8; "auto" works, system prompt + tools reliably steer to a call, and _parse_tool_calls handles a no-tool-call step gracefully.
+                tool_choice=tool_choice,  # threaded from caller; V3.2/AtlasCloud FP8 needs "auto"; cross-model panel providers (Atlas Qwen3, DeepInfra gpt-oss) support "required".
                 temperature=temperature,
                 max_tokens=max_tokens,
                 extra_body=extra_body,

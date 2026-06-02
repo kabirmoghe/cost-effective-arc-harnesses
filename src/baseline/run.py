@@ -12,7 +12,7 @@ from openai import OpenAI
 from database.client import EvalClient
 from shared.types import Grid, Task
 from shared.loader import load_task, get_task_ids
-from shared.llm import create_client, get_default_model, get_extra_body
+from shared.llm import create_client, get_default_model, get_extra_body, get_response_format, with_retry_sync
 from baseline.prompt import BASELINE_SYSTEM_PROMPT, build_user_message
 from baseline.extract_response import extract_response
 
@@ -29,7 +29,7 @@ def log(msg: str = ""):
         print(msg, flush=True)
 
 
-def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = False) -> tuple[Grid, dict]:
+def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = False, provider: str = "openrouter") -> tuple[Grid, dict]:
     """Solve a single ARC task test case with few-shot only (no CoT).
 
     Returns (predicted_grid, usage_dict).
@@ -39,15 +39,15 @@ def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = F
 
     if stream:
         resp_stream = client.chat.completions.create(
-            model=get_default_model("openrouter"),
+            model=get_default_model(provider),
             messages=[
                 {"role": "system", "content": BASELINE_SYSTEM_PROMPT},
                 {"role": "user", "content": user_msg},
             ],
             temperature=0.0,
             max_tokens=MAX_TOKENS,
-            response_format={"type": "json_object"},
-            extra_body=get_extra_body("openrouter"),
+            response_format=get_response_format(provider),
+            extra_body=get_extra_body(provider),
             stream=True,
             stream_options={"include_usage": True},
         )
@@ -69,16 +69,19 @@ def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = F
             sys.stdout.write("\n")
             sys.stdout.flush()
     else:
-        resp = client.chat.completions.create(
-            model=get_default_model("openrouter"),
-            messages=[
-                {"role": "system", "content": BASELINE_SYSTEM_PROMPT},
-                {"role": "user", "content": user_msg},
-            ],
-            temperature=0.0,
-            max_tokens=MAX_TOKENS,
-            response_format={"type": "json_object"},
-            extra_body=get_extra_body("openrouter"),
+        resp = with_retry_sync(
+            lambda: client.chat.completions.create(
+                model=get_default_model(provider),
+                messages=[
+                    {"role": "system", "content": BASELINE_SYSTEM_PROMPT},
+                    {"role": "user", "content": user_msg},
+                ],
+                temperature=0.0,
+                max_tokens=MAX_TOKENS,
+                response_format=get_response_format(provider),
+                extra_body=get_extra_body(provider),
+            ),
+            label=f"baseline.{provider}",
         )
         raw = resp.choices[0].message.content
         usage["prompt_tokens"] = resp.usage.prompt_tokens
@@ -87,13 +90,13 @@ def solve_task(client: OpenAI, task: Task, test_index: int = 0, stream: bool = F
     return extract_response(raw), usage
 
 
-def _run_single(client: OpenAI, task_id: str, split: str) -> list[dict]:
+def _run_single(client: OpenAI, task_id: str, split: str, provider: str = "openrouter") -> list[dict]:
     """Run a single task and return result dicts. Used by parallel evaluate."""
     task = load_task(task_id, split)
     results = []
     for test_idx in range(task.num_test):
         try:
-            predicted, usage = solve_task(client, task, test_idx)
+            predicted, usage = solve_task(client, task, test_idx, provider=provider)
             expected = task.test[test_idx].output
             match = predicted == expected
             results.append({
@@ -125,10 +128,11 @@ def evaluate(
     workers: int = 1,
     stream: bool = False,
     output_file: Optional[str] = None,
+    provider: str = "openrouter",
 ):
     """Evaluate no-CoT baseline on a set of tasks."""
-    log("Initializing OpenRouter client (V3.2 via Novita FP8)...")
-    client = create_client("openrouter")
+    log(f"Initializing client (provider={provider})...")
+    client = create_client(provider)
     log("Client ready.\n")
 
     if task_ids:
@@ -153,7 +157,7 @@ def evaluate(
                 total += 1
                 log(f"\n[{total}] Task {task_id} (test {test_idx})")
                 try:
-                    predicted, usage = solve_task(client, task, test_idx, stream=stream)
+                    predicted, usage = solve_task(client, task, test_idx, stream=stream, provider=provider)
                     expected = task.test[test_idx].output
                     match = predicted == expected
                     if match:
@@ -178,7 +182,7 @@ def evaluate(
 
         with ThreadPoolExecutor(max_workers=workers) as executor:
             futures = {
-                executor.submit(_run_single, client, task_id, split): task_id
+                executor.submit(_run_single, client, task_id, split, provider): task_id
                 for task_id in ids
             }
             for future in as_completed(futures):
@@ -257,6 +261,9 @@ if __name__ == "__main__":
     parser.add_argument("--workers", type=int, default=1, help="Parallel workers (default: 1 = sequential)")
     parser.add_argument("--stream", action="store_true", help="Stream responses (only in sequential mode)")
     parser.add_argument("--output", type=str, default=None, help="Save results JSON to file")
+    parser.add_argument("--provider", type=str, default="openrouter",
+                        choices=["deepseek", "openai", "openrouter", "openrouter-friendli",
+                                 "openrouter-qwen3", "openrouter-llama-3.3", "openrouter-llama-4-maverick", "openrouter-kimi-k2"])
     args = parser.parse_args()
 
     task_ids = [args.task] if args.task else None
@@ -267,4 +274,5 @@ if __name__ == "__main__":
         workers=args.workers,
         stream=args.stream,
         output_file=args.output,
+        provider=args.provider,
     )

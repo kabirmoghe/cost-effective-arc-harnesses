@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 from database.client import EvalClient
 from shared.loader import load_task, get_task_ids
-from shared.llm import create_async_client, get_default_model, get_extra_body
+from shared.llm import create_async_client, get_default_model, get_extra_body, get_tool_choice
 from pipeline.agents.pattern_explorer.core import run_parallel_explorers
 from pipeline.agents.transformation_definer.core import define_transformation
 from pipeline.agents.pattern_explorer.types import ExplorationResult, PatternDocument
@@ -83,6 +83,7 @@ async def _run_task(
     exploration: ExplorationResult | None = None,
     parent_explorer_ids: list[str] | None = None,
     extra_body: dict | None = None,
+    tool_choice: str = "auto",
     enable_refinement: bool = False,
     explorers_only: bool = False,
     explorer_temperature: float = 0.0,
@@ -112,6 +113,7 @@ async def _run_task(
             log_fn=log_fn,
             extra_body=extra_body,
             temperature=explorer_temperature,
+            tool_choice=tool_choice,
         )
         exploration.run_id = run_id
         explorer_ids = []
@@ -177,6 +179,7 @@ async def _run_task(
                 max_steps=max_steps, log_fn=log_fn, extra_body=extra_body,
                 enable_refinement=enable_refinement,
                 definer_variant=definer_variant,
+                tool_choice=tool_choice,
             )
             for _ in range(num_definers)
         ],
@@ -342,6 +345,7 @@ async def run(
     client = create_async_client(provider)
     model_name = model or get_default_model(provider)
     extra_body = get_extra_body(provider)
+    tool_choice = get_tool_choice(provider)
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
     run_id = run_id or new_run_id()
@@ -413,6 +417,7 @@ async def run(
                     num_explorers, num_definers, max_steps, task_log, db=db,
                     exploration=exploration, parent_explorer_ids=parent_ids,
                     extra_body=extra_body,
+                    tool_choice=tool_choice,
                     enable_refinement=enable_refinement,
                     explorers_only=explorers_only,
                     explorer_temperature=explorer_temperature,
@@ -514,7 +519,7 @@ if __name__ == "__main__":
     parser.add_argument("--from-explorers", type=str, default=None, help="Definer-only re-run: reuse explorer findings from this source run_id, skipping the exploration phase (must differ from --run-id)")
     parser.add_argument("--max-concurrent-tasks", type=int, default=4)
     parser.add_argument("--output", type=str, default="output/pipeline")
-    parser.add_argument("--provider", type=str, default="deepseek", choices=["deepseek", "openai", "openrouter", "openrouter-friendli"])
+    parser.add_argument("--provider", type=str, default="deepseek", choices=["deepseek", "openai", "openrouter", "openrouter-friendli", "openrouter-qwen3", "openrouter-llama-3.3", "openrouter-llama-4-maverick", "openrouter-kimi-k2"])
     parser.add_argument("--model", type=str, default=None)
     parser.add_argument("--max-steps", type=int, default=10)
     parser.add_argument("--run-id", type=str, default=None)

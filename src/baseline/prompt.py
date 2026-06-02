@@ -10,8 +10,13 @@ Each grid is a 2D array of integers 0-9 representing colors:
 
 You will be given training examples (input/output pairs) that demonstrate a transformation rule, then a test input. Apply the same transformation rule to produce the output.
 
-Respond with valid JSON containing:
-- "output": the transformed grid as a 2D array of integers"""
+# Output Format
+
+**Do not** output any intermediate reasoning, explanation, markdown-fenced code. 
+Respond only with a single valid JSON object that contains exactly one key: "output", whose value is the transformed grid as a 2D array of integers.
+
+Example of the ONLY acceptable response shape:
+{"output": [[0,1,2],[3,4,5]]}"""
 
 
 def format_grid(grid: Grid) -> str:

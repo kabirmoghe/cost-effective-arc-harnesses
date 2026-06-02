@@ -365,7 +365,7 @@ if __name__ == "__main__":
     parser.add_argument("--max-concurrent-tasks", type=int, default=4)
     parser.add_argument("--output", type=str, default="output/orchestrator")
     parser.add_argument("--provider", type=str, default="openrouter",
-                        choices=["deepseek", "openai", "openrouter", "openrouter-friendli"])
+                        choices=["deepseek", "openai", "openrouter", "openrouter-friendli", "openrouter-qwen3"])
     parser.add_argument("--model", type=str, default=None)
     parser.add_argument("--run-id", type=str, default=None)
     parser.add_argument("--quiet", action="store_true")

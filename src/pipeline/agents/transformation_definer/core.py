@@ -125,6 +125,11 @@ def _parse_tool_calls(
             args = json.loads(tc.function.arguments)
         except json.JSONDecodeError:
             continue
+        # Robustness: some providers return non-dict tool arguments (e.g. a
+        # bare string or list when the model malforms the JSON shape).
+        if not isinstance(args, dict):
+            log_fn(f"    ⚠ ignoring malformed tool args (got {type(args).__name__}, not dict)")
+            continue
 
         name = tc.function.name
         if name == "think":
@@ -298,6 +303,7 @@ async def _run_phase1(
     max_tokens: int,
     temperature: float,
     extra_body: dict | None,
+    tool_choice: str,
     trace: list[TraceEntry],
     usage: dict,
     log_fn: Callable[[str], None],
@@ -345,7 +351,7 @@ async def _run_phase1(
                 model=model,
                 messages=messages,
                 tools=tools,
-                tool_choice="auto",
+                tool_choice=tool_choice,
                 temperature=temperature,
                 max_tokens=max_tokens,
                 extra_body=extra_body,
@@ -445,6 +451,7 @@ async def _run_phase2_b5b(
     max_tokens: int,
     temperature: float,
     extra_body: dict | None,
+    tool_choice: str,
     trace: list[TraceEntry],
     usage: dict,
     log_fn: Callable[[str], None],
@@ -528,7 +535,7 @@ async def _run_phase2_b5b(
                 model=model,
                 messages=messages,
                 tools=tools,
-                tool_choice="auto",  # AtlasCloud FP8 rejects "required"; rely on tool-list + nudge
+                tool_choice=tool_choice,  # AtlasCloud FP8 rejects "required"; rely on tool-list + nudge
                 temperature=temperature,
                 max_tokens=max_tokens,
                 extra_body=extra_body,
@@ -588,6 +595,7 @@ async def define_transformation(
     extra_body: Optional[dict] = None,
     enable_refinement: bool = False,
     definer_variant: str = "react",
+    tool_choice: str = "auto",
 ) -> TransformationResult:
     """Run the transformation definer.
 
@@ -611,6 +619,7 @@ async def define_transformation(
         client=client, model=model,
         max_steps=max_steps, max_repairs=max_repairs,
         max_tokens=max_tokens, temperature=temperature, extra_body=extra_body,
+        tool_choice=tool_choice,
         trace=trace, usage=usage, log_fn=_log,
         definer_variant=definer_variant,
     )
@@ -648,6 +657,7 @@ async def define_transformation(
             client=client, model=model,
             failure_feedback=failure_feedback,
             max_tokens=max_tokens, temperature=temperature, extra_body=extra_body,
+            tool_choice=tool_choice,
             trace=trace, usage=usage, log_fn=_log,
             definer_variant=definer_variant,
         )

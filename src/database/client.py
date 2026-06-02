@@ -209,9 +209,12 @@ class EvalClient:
         dataset: str,
         results: list[dict],
         token_usage: dict | None = None,
+        extra: dict | None = None,
     ) -> str | None:
         run_id = str(uuid7())
         data = compute_baseline_metrics(results, token_usage)
+        if extra:
+            data["extra"] = extra
 
         def _do() -> str:
             with self._get_conn() as conn, conn.cursor() as cur:

@@ -20,8 +20,9 @@ arc_sample_tooling_2023/
 src/.env
 .DS_Store
 
-# images
+# docs
 *.png
+*.pdf
 
 # Agents
 .claude/
