@@ -113,8 +113,6 @@ The M=1 control (40.6%) ≈ the April first-party 44%, confirming OpenRouter/Fri
 
 **Naming for paper artifacts:** the headline directed pipeline cell is called **Pipeline** (internally B7); the agentic-loop architecture is called **Reflective Orchestrator** or **Orchestrator** (internally B8). Internal B-codes (B0, B4, B5, B5b, B6, B7, B7.5, B7.6, B8) persist in code identifiers (prompt files, DB tags) for stability — see the Reference Key in `RESEARCH_TRAJECTORY.md`. Use the human names in all paper-facing surfaces: docs, plots, figure captions, table headers.
 
-Additional informal notes in `Random Resources & Notes.md`.
-
 ## Reference Material
 
 - ARC AGI 1: https://github.com/fchollet/ARC-AGI
