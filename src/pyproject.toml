@@ -3,9 +3,10 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "arc-agent"
+name = "arc-agi-architectures"
 version = "0.1.0"
-description = "ARC AGI Baseline Agent - A tool-based agentic system for solving ARC tasks"
+description = "Agentic architectures for ARC-AGI: single-call baselines, a two-stage explorer/definer pipeline, and a reflective orchestrator."
+authors = [{name = "Kabir Moghe"}]
 requires-python = ">=3.10"
 license = {text = "MIT"}
 
@@ -29,12 +30,12 @@ dev = [
     "pytest-asyncio>=0.21.0",
 ]
 
-[project.scripts]
-arc-agent = "arc_agent.main:main"
-
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["arc_agent*"]
+include = [
+    "shared*", "baseline*", "CoT*", "arc_base*",
+    "pipeline*", "orchestrator*", "database*",
+]
 
 [dependency-groups]
 dev = [
