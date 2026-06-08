@@ -1,28 +1,52 @@
+# --- Ignore by path/intent, not by extension. ---
+# Docs, figures, metrics, and results JSON ARE part of the body of work and are
+# tracked. Only build artifacts, secrets, virtualenvs, and bulk raw output are
+# excluded below.
+
 # Python-generated files
 __pycache__/
 *.py[oc]
 build/
 dist/
 wheels/
-*.egg-info
+*.egg-info/
 
 # Virtual environments
-.venv
+.venv/
+src/.venv/
 
-# data
-*.csv
-*.json
-
-# Other
-*.md
-arc_sample_tooling_2023/
-*.excalidraw
+# Secrets / local config
 src/.env
-.DS_Store
+.env
+*.env.local
 
-# docs
-*.png
-*.pdf
+# OS / editor cruft
+.DS_Store
+*.excalidraw
 
 # Agents
 .claude/
+
+# Raw per-agent run output (~4.3 GB / 85k files). The canonical source of truth
+# is Postgres; committed exports live in src/database/exports/. Per-run JSON on
+# disk is belt-and-suspenders and intentionally not tracked.
+src/output/
+
+# Large vendored raw dataset available from the upstream ARC repos. The task
+# data the harnesses actually load lives in arc_official_repo/ (tracked).
+/arc-agi_evaluation_challenges.json
+
+# Nested reference checkout that carries its own VCS history.
+arc_sample_tooling_2023/
+
+# Local-only working artifacts: prior/one-time docs and build outputs kept on
+# disk for personal reference but deliberately excluded from the published repo,
+# which carries only what readers need to follow the research (trajectory,
+# figures, results, code) plus CLAUDE.md.
+/orchestrator_spec.md
+/CHECKLIST.md
+/Random Resources & Notes.md
+/eval_engine_roadmap.md
+/report.pdf
+/eval_schema.png
+/arc_1_leaderboard.csv

@@ -1,0 +1,138 @@
+{
+  "pricing": {
+    "atlas_fp8": {
+      "input_usd_per_m": 0.3,
+      "completion_usd_per_m": 0.38
+    }
+  },
+  "b8": {
+    "run_id": "019e818d-2907-7694-8fdd-dae6138a2b1e",
+    "source_explorer_run_id": "019e6c1c-388c-7422-9107-61b818097170",
+    "m_sweep": [
+      {
+        "M": 1,
+        "pass_at_1": 0.5575,
+        "pass_at_2": null,
+        "avg_tokens_per_task": 809281.9775,
+        "usd_per_task": 0.24909782,
+        "usd_per_400": 99.639128
+      },
+      {
+        "M": 2,
+        "pass_at_1": 0.5925,
+        "pass_at_2": 0.6125,
+        "avg_tokens_per_task": 1105219.6875,
+        "usd_per_task": 0.33991642,
+        "usd_per_400": 135.966568
+      },
+      {
+        "M": 3,
+        "pass_at_1": 0.6075,
+        "pass_at_2": 0.635,
+        "avg_tokens_per_task": 1422695.125,
+        "usd_per_task": 0.4374078,
+        "usd_per_400": 174.96312
+      },
+      {
+        "M": 4,
+        "pass_at_1": 0.6125,
+        "pass_at_2": 0.65,
+        "avg_tokens_per_task": 1728724.005,
+        "usd_per_task": 0.5312877,
+        "usd_per_400": 212.51508
+      },
+      {
+        "M": 5,
+        "pass_at_1": 0.625,
+        "pass_at_2": 0.6725,
+        "avg_tokens_per_task": 2014118.3399999999,
+        "usd_per_task": 0.61882686,
+        "usd_per_400": 247.530744
+      }
+    ]
+  },
+  "b7": {
+    "run_id": "019e7ec8-b83c-7ee2-96e8-12e3afd28d37",
+    "source_explorer_run_id": "019e6c1c-388c-7422-9107-61b818097170",
+    "m_sweep": [
+      {
+        "M": 1,
+        "pass_at_1": 0.4675,
+        "pass_at_2": null,
+        "avg_tokens_per_task": 559156.19,
+        "usd_per_task": 0.17255642,
+        "usd_per_400": 69.02256799999999
+      },
+      {
+        "M": 2,
+        "pass_at_1": 0.51,
+        "pass_at_2": 0.5225,
+        "avg_tokens_per_task": 622071.7024999999,
+        "usd_per_task": 0.1920229,
+        "usd_per_400": 76.80915999999999
+      },
+      {
+        "M": 3,
+        "pass_at_1": 0.525,
+        "pass_at_2": 0.5475,
+        "avg_tokens_per_task": 683662.1975,
+        "usd_per_task": 0.21108742,
+        "usd_per_400": 84.434968
+      },
+      {
+        "M": 4,
+        "pass_at_1": 0.535,
+        "pass_at_2": 0.56,
+        "avg_tokens_per_task": 747810.3225,
+        "usd_per_task": 0.23093702,
+        "usd_per_400": 92.374808
+      },
+      {
+        "M": 5,
+        "pass_at_1": 0.5475,
+        "pass_at_2": 0.575,
+        "avg_tokens_per_task": 811550.2825,
+        "usd_per_task": 0.25067006,
+        "usd_per_400": 100.26802399999998
+      }
+    ]
+  },
+  "reference_systems": {
+    "baseline": {
+      "system": "baseline",
+      "run_id": "019e6584-1e1a-742d-9e07-0ba049311bb3",
+      "n_tasks": 400,
+      "n_test_pairs": 419,
+      "accuracy": 0.1325,
+      "accuracy_test_pair_level": 0.14081145584725538,
+      "total_prompt_tokens": 2042519,
+      "total_completion_tokens": 304519,
+      "total_tokens": 2347038,
+      "avg_total_tokens": 5867.595,
+      "usd_per_task_atlas": 0.0018211822999999999,
+      "usd_per_400_atlas": 0.72847292,
+      "usd_per_task_friendli": 0.003695095,
+      "usd_per_400_friendli": 1.478038,
+      "label": "Baseline (no-CoT, 1 attempt)",
+      "metric_kind": "pass@1"
+    },
+    "CoT": {
+      "system": "CoT",
+      "run_id": "019e3e30-528a-7737-a871-39cce465a600",
+      "n_tasks": 400,
+      "n_test_pairs": 419,
+      "accuracy": 0.265,
+      "accuracy_test_pair_level": 0.2840095465393795,
+      "total_prompt_tokens": 2052027,
+      "total_completion_tokens": 2919011,
+      "total_tokens": 4971038,
+      "avg_total_tokens": 12427.595,
+      "usd_per_task_atlas": 0.004312080699999999,
+      "usd_per_400_atlas": 1.7248322799999998,
+      "usd_per_task_friendli": 0.013511324999999998,
+      "usd_per_400_friendli": 5.404529999999999,
+      "label": "CoT (1 attempt)",
+      "metric_kind": "pass@1"
+    }
+  }
+}

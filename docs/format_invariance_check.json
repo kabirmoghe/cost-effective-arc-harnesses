@@ -1,0 +1,55 @@
+{
+  "purpose": "Verify that swapping baseline/CoT grid representation from JSON (ARC Prize harness format) to ASCII-with-coordinate-headers (matching pipeline agents) does not materially affect single-call accuracy. Supports the architectural-lift claim by holding grid format constant across all architectures.",
+  "model": "DeepSeek V3.2 (atlas-cloud/fp8 via OpenRouter)",
+  "split": "evaluation",
+  "n_tasks": 400,
+  "n_test_pairs": 419,
+  "date": "2026-06-03",
+  "baseline": {
+    "json_format": {
+      "run_id": "019e8524-253b-776c-adf8-ee60d506e705",
+      "n_correct_pairs": 65,
+      "n_correct_tasks": 64,
+      "test_pair_accuracy": 0.1551,
+      "task_level_accuracy": 0.1600
+    },
+    "ascii_format": {
+      "run_id": "019e8e9d-970c-77a4-b2e0-c707b6bfeace",
+      "n_correct_pairs": 63,
+      "n_correct_tasks": 62,
+      "test_pair_accuracy": 0.1504,
+      "task_level_accuracy": 0.1550
+    },
+    "swing": {
+      "json_only_correct_pairs": 13,
+      "ascii_only_correct_pairs": 11,
+      "same_outcome_pairs": 395,
+      "net_delta_pp": -0.5,
+      "interpretation": "Within sampling noise; ASCII slightly worse but indistinguishable."
+    }
+  },
+  "cot": {
+    "json_format": {
+      "run_id": "019e3e30-528a-7737-a871-39cce465a600",
+      "n_correct_pairs": 119,
+      "n_correct_tasks": 111,
+      "test_pair_accuracy": 0.2840,
+      "task_level_accuracy": 0.2775
+    },
+    "ascii_format": {
+      "run_id": "019e8ecf-5326-7e5c-b707-b55c3467ada6",
+      "n_correct_pairs": 126,
+      "n_correct_tasks": 120,
+      "test_pair_accuracy": 0.3007,
+      "task_level_accuracy": 0.3000
+    },
+    "swing": {
+      "json_only_correct_pairs": 37,
+      "ascii_only_correct_pairs": 44,
+      "same_outcome_pairs": 338,
+      "net_delta_pp": 1.67,
+      "interpretation": "Mildly favorable to ASCII (+2.25pp task-level); within sampling noise on a single comparison, but consistent direction. CoT exercises the model more than baseline so format-sensitivity surfaces here."
+    }
+  },
+  "decision": "ASCII format adopted as canonical for baseline + CoT (matches pipeline agents). All architectures now consume training examples in the same ASCII-with-coordinate-headers format. The architectural lift reported in the paper therefore measures architecture, not prompt format."
+}

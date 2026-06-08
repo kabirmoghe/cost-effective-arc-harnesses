@@ -1,0 +1,5860 @@
+{
+  "n_tasks": 400,
+  "runs": {
+    "baseline": "019e6584-1e1a-742d-9e07-0ba049311bb3",
+    "CoT": "019e3e30-528a-7737-a871-39cce465a600",
+    "B7": "019e7ec8-b83c-7ee2-96e8-12e3afd28d37",
+    "B8": "019e818d-2907-7694-8fdd-dae6138a2b1e"
+  },
+  "per_task": [
+    {
+      "task_id": "00576224",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "009d5c81",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "00dbd492",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "03560426",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "05a7bcf2",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "0607ce86",
+      "baseline": true,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "0692e18c",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "070dd51e",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "08573cc6",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "0934a4d8",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "09c534e7",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "0a1d4ef5",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "0a2355a6",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "0b17323b",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "0bb8deee",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "0becf7df",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "0c786b71",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "0c9aba6e",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "0d87d2a6",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "0e671a1a",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "0f63c0b9",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "103eff5b",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "11e1fe23",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "12422b43",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "12997ef3",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "12eac192",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "136b0064",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "13713586",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "137f0df0",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "140c817e",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "no_tool_call",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "14754a24",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "15113be4",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "15663ba9",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "15696249",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "16b78196",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "17b80ad2",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "17cae0c1",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "18419cfa",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "184a9768",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "195ba7dc",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "1990f7a8",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "19bb5feb",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "1a2e2828",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "1a6449f1",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "1acc24af",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "1c02dbbe",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "1c0d0a4b",
+      "baseline": true,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "1c56ad9f",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "1d0a4b61",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "1d398264",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "1da012fc",
+      "baseline": false,
+      "CoT": true,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "1e81d6f9",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "1e97544e",
+      "baseline": true,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "2037f2c7",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "2072aba6",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "20818e16",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "20981f0e",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "212895b5",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "21f83797",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "22a4bbc2",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "25094a63",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "2546ccf6",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "256b0a75",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "2685904e",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "2697da3f",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "2753e76c",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "27a77e38",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "27f8ce4f",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "281123b4",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "292dd178",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "29700607",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "2a5f8217",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "2b01abd0",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "2c0b0aff",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "no_tool_call",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "2c737e39",
+      "baseline": false,
+      "CoT": true,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "2f0c5170",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "310f3251",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "3194b014",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "319f2597",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "31adaf00",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "31d5ba1a",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "32e9702f",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "332efdb3",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "3391f8c0",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "33b52de3",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "3490cc26",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "34b99a2b",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "351d6448",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "358ba94e",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "37d3e8b2",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "3979b1a8",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "3a301edc",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "3b4c2228",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "3d31c5b3",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "3ed85e70",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "3ee1011a",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "3f23242b",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "40f6cd08",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "414297c0",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "423a55dc",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "42918530",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "42a15761",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 3,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "4364c1c4",
+      "baseline": false,
+      "CoT": true,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "456873bc",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "45737921",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "45bbe264",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "477d2879",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 3,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "47996f11",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "48131b3c",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "4852f2fa",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "48f8583b",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "4aab4007",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "4acc7107",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "4b6b68e5",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "4c177718",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "4cd1b7b2",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "4e45f183",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "4e469f39",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "4f537728",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "4ff4c9da",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "505fff84",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "506d28a5",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "50a16a69",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "50aad11f",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "50f325b5",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "516b51b7",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "5207a7b5",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "5289ad53",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "52fd389e",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "54db823b",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "55059096",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "551d5bf1",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "55783887",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "575b1a71",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "5783df64",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "5833af48",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "58743b76",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "58e15b12",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "59341089",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "5a5a2103",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "5af49b42",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "5b526a93",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "5b692c0f",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "5b6cbef5",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "5d2a5c43",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "5ffb2104",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "604001fa",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "60a26a3e",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "60c09cac",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "626c0bcc",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "62ab2642",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "62b74c02",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "639f5a19",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "642248e4",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "642d658d",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "consecutive_exec_errors",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "64a7c07e",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "66e6c45b",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "66f2d22f",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "67636eac",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "67b4a34d",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "67c52801",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "68b67ca3",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "692cd3b6",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "695367ec",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "696d4842",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "69889d6e",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "6a11f6da",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "6ad5bdfd",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "6df30ad6",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "6ea4a07e",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "6f473927",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "7039b2d7",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "705a3229",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "712bf12e",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "no_tool_call"
+      ]
+    },
+    {
+      "task_id": "72207abc",
+      "baseline": true,
+      "CoT": true,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "72a961c9",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "73182012",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "73c3b0d8",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "73ccf9c2",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "759f3fd3",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "762cd429",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "770cc55f",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "782b5218",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "79369cc6",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "7953d61e",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "79fb03f4",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "7bb29440",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 3,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "7c8af763",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "7c9b52a0",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "7d18a6fb",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "7d1f7ee8",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "7d419a02",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "7e02026e",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "7ee1c6ea",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "817e6c09",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "81c0276b",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "833dafe3",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "845d6e51",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "84db8fc4",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "84f2aca1",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "8597cfd7",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "85b81ff1",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "no_tool_call",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "85fa5666",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "8719f442",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "88207623",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "891232d6",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "896d5239",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "8a371977",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "8b28cd80",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "8ba14f53",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "8cb8642d",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "8dae5dfc",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "8e2edd66",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "8ee62060",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "8fbca751",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "90347967",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "903d1b4a",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9110e3c5",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "917bccba",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "929ab4e9",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "92e50de0",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9356391f",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "93b4f4b3",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "93c31fbe",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "94133066",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "94414823",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "94be5b80",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "95a58926",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "963f59bc",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "no_tool_call"
+      ]
+    },
+    {
+      "task_id": "96a8c0cd",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "97239e3d",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9772c176",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "981571dc",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "992798f6",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "99306f82",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9a4bb226",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9b2a60aa",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9b365c51",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9b4c17c4",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9bebae7a",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9c1e755f",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9c56f360",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9caba7c3",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "9ddd00f0",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9def23fe",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "9f27f097",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "a04b2602",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "a096bf4d",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "no_tool_call"
+      ]
+    },
+    {
+      "task_id": "a3f84088",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "a406ac07",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "a57f2f04",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "a59b95c0",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "a680ac02",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "a8610ef7",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "a934301b",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "aa18de87",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "aa300dc3",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "aa4ec2a5",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "aab50785",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ac0c5833",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "ac2e8ecf",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "ac3e2b04",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "ac605cbb",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ad7e01d0",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ae58858e",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "no_tool_call",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "aee291af",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "af22c60d",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "no_tool_call",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "af24b4cc",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "b0722778",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "b0f4d537",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "b15fca0b",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "no_tool_call"
+      ]
+    },
+    {
+      "task_id": "b1fc8b8e",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "b20f7c8b",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "b457fec5",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "b4a43f3b",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "b7999b51",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "b7cb93ac",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "b7f8a4d8",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "b7fb29bc",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "b942fd60",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "no_tool_call"
+      ]
+    },
+    {
+      "task_id": "b9630600",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "ba9d41b8",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "baf41dbf",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "bb52a14b",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "bbb1b8b6",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "bc4146bd",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "bcb3040b",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "bd14c3bf",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "be03b35f",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "bf32578f",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "bf699163",
+      "baseline": false,
+      "CoT": true,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "bf89d739",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "c074846d",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "c1990cce",
+      "baseline": false,
+      "CoT": true,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "c3202e5a",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "c35c1b4c",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "c48954c1",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "c62e2108",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "c64f1187",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "c658a4bd",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "c663677b",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "c6e1b8da",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "c7d4e6ad",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "c87289bb",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 3,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "c8b7cc0f",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "c92b942c",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "c97c0139",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ca8de6ea",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ca8f78db",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "cad67732",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "cb227835",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ccd554ac",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "cd3c21df",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ce039d91",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "ce8d95cc",
+      "baseline": true,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "cf133acc",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "cfb2ce5a",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "d017b73f",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "d19f7514",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "d282b262",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "d2acf2cb",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "d304284e",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "d37a1ef5",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "d47aa2ff",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "d492a647",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "d4b1c2b1",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "d4c90558",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "d56f2372",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "no_tool_call",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "d5c634a2",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "d931c21c",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "d94c3b52",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "da2b0fe3",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "da515329",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "dc2aa30b",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "dc2e9a9d",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "dd2401ed",
+      "baseline": false,
+      "CoT": true,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "de493100",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "df8cc377",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e0fb7511",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e133d23d",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e1baa8a4",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e1d2900e",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "e2092e0c",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e21a174a",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e345f17b",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e4075551",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e41c6fd3",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e57337a4",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e5790162",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e5c44e8f",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "e619ca6e",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e633a9e5",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e66aafb8",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e681b708",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "e69241bd",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e6de6e8f",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "no_tool_call"
+      ]
+    },
+    {
+      "task_id": "e74e1818",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e760a62e",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e7639916",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e78887d1",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e7a25a18",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e7b06bea",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e7dd8335",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e872b94a",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e88171ec",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e95e3d8e",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e99362f0",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "no_tool_call",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e9ac8c9e",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e9b4f6fc",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e9bb6954",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "e9c9d9a1",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ea959feb",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ea9794b1",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ecaa0ec1",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 2,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ed74f2f2",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 3,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "ed98d772",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ef26cbf6",
+      "baseline": false,
+      "CoT": true,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f0afb749",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f0df5ff0",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f21745ec",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f3b10344",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f3cdc58f",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 3,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f3e62deb",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f4081712",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f45f5ca7",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f5aa3634",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "no_tool_call",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f5c89df1",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": true,
+      "b8_winners_n_spawns": 1,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f823c43c",
+      "baseline": true,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f83cb3f6",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "f8be4b64",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "f9a67cb5",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "f9d67f8b",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations",
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "fafd9572",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "fb791726",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "fc754716",
+      "baseline": true,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "fd096ab6",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "fd4b2b02",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "done",
+        "max_iterations"
+      ]
+    },
+    {
+      "task_id": "fe9372f3",
+      "baseline": false,
+      "CoT": true,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "fea12743",
+      "baseline": false,
+      "CoT": false,
+      "B7": false,
+      "B8": false,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": true,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    },
+    {
+      "task_id": "ff72ca3e",
+      "baseline": false,
+      "CoT": false,
+      "B7": true,
+      "B8": true,
+      "b8_winners_used_spawn": false,
+      "b8_winners_n_spawns": 0,
+      "b8_winners_used_exec_repair": false,
+      "b8_any_definer_used_spawn": false,
+      "b8_exit_reasons": [
+        "perfect_train"
+      ]
+    }
+  ],
+  "triple_hard_b8_solved_ids": [
+    "103eff5b",
+    "15663ba9",
+    "1c02dbbe",
+    "20981f0e",
+    "292dd178",
+    "2f0c5170",
+    "31adaf00",
+    "33b52de3",
+    "37d3e8b2",
+    "3a301edc",
+    "42a15761",
+    "477d2879",
+    "551d5bf1",
+    "5b526a93",
+    "5b692c0f",
+    "60a26a3e",
+    "67b4a34d",
+    "6ad5bdfd",
+    "759f3fd3",
+    "7bb29440",
+    "7d18a6fb",
+    "8597cfd7",
+    "99306f82",
+    "9b365c51",
+    "9bebae7a",
+    "aee291af",
+    "b7f8a4d8",
+    "c62e2108",
+    "c87289bb",
+    "cb227835",
+    "cf133acc",
+    "d282b262",
+    "d56f2372",
+    "d931c21c",
+    "dc2e9a9d",
+    "e1d2900e",
+    "e619ca6e",
+    "ed74f2f2",
+    "f21745ec",
+    "f4081712"
+  ],
+  "showcase_spawn_induced_triple_hard_ids": [
+    "103eff5b",
+    "15663ba9",
+    "1c02dbbe",
+    "20981f0e",
+    "2f0c5170",
+    "31adaf00",
+    "33b52de3",
+    "37d3e8b2",
+    "3a301edc",
+    "42a15761",
+    "477d2879",
+    "551d5bf1",
+    "5b692c0f",
+    "67b4a34d",
+    "6ad5bdfd",
+    "759f3fd3",
+    "7bb29440",
+    "9b365c51",
+    "9bebae7a",
+    "aee291af",
+    "c62e2108",
+    "c87289bb",
+    "cb227835",
+    "cf133acc",
+    "d931c21c",
+    "dc2e9a9d",
+    "e1d2900e",
+    "e619ca6e",
+    "ed74f2f2",
+    "f21745ec"
+  ]
+}

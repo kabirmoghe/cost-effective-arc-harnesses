@@ -1,0 +1,37 @@
+{
+  "run_id": "019e7ec8-b83c-7ee2-96e8-12e3afd28d37",
+  "num_tasks": 400,
+  "refinement_on": {
+    "pass_at_1": 0.5475,
+    "pass_at_2": 0.575,
+    "n_correct_pass_at_1": 219,
+    "n_correct_pass_at_2": 230
+  },
+  "refinement_off": {
+    "pass_at_1": 0.545,
+    "pass_at_2": 0.5675,
+    "n_correct_pass_at_1": 218,
+    "n_correct_pass_at_2": 227
+  },
+  "delta_pass_at_1": 0.0025,
+  "delta_pass_at_2": 0.0075,
+  "paired_bootstrap_ci": {
+    "B": 10000,
+    "seed": 20260602,
+    "pass_at_1": {
+      "delta_pp": 0.25,
+      "ci_lo_pp": -0.5,
+      "ci_hi_pp": 1.25,
+      "excludes_zero": false,
+      "frac_boot_above_zero": 0.606
+    },
+    "pass_at_2": {
+      "delta_pp": 0.75,
+      "ci_lo_pp": -0.25,
+      "ci_hi_pp": 2.0,
+      "excludes_zero": false,
+      "frac_boot_above_zero": 0.8743
+    }
+  },
+  "methodology_note": "Refinement-OFF is subsampled from the same run: attempts[0] (Phase 1) per definer is bit-for-bit equivalent to a no-refinement call because the locked Pipeline uses SYSTEM_PROMPT (B4 prompt, no refinement awareness) for Phase 1; the SYSTEM_PROMPT_B5B swap happens only after Phase 1 commits."
+}

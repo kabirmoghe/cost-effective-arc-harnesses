@@ -1,0 +1,151 @@
+{
+  "methodology": {
+    "B": 10000,
+    "seed": 20260602,
+    "alpha": 0.05,
+    "captures": "sampling noise (resampling task indices with replacement)",
+    "does_not_capture": "run-to-run model non-determinism",
+    "paired_delta_note": "Paired \u0394 bootstraps jointly resample task indices so both arms see the same tasks; controls for task-level difficulty as a common confounder.",
+    "ablation_note": "Act-only and refinement-off rows compare against the locked Pipeline (run 019e7ec8). Refinement-off is subsampled from the same run (attempts[0] / Phase 1 only); act-only is a dedicated run with the `think` tool removed."
+  },
+  "n_paired_tasks": 400,
+  "runs": {
+    "baseline": "019e8e9d-970c-77a4-b2e0-c707b6bfeace",
+    "cot": "019e8ecf-5326-7e5c-b707-b55c3467ada6",
+    "pipeline": "019e7ec8-b83c-7ee2-96e8-12e3afd28d37",
+    "orchestrator": "019e818d-2907-7694-8fdd-dae6138a2b1e",
+    "act_only": "019e7ff3-0847-736e-8e0f-411d2c6822aa"
+  },
+  "per_architecture": {
+    "baseline_pass_at_1": {
+      "point": 0.155,
+      "ci_lo": 0.12,
+      "ci_hi": 0.1925,
+      "ci_half_width_pp": 3.6250000000000004,
+      "n_correct": 62,
+      "n_total": 400
+    },
+    "cot_pass_at_1": {
+      "point": 0.3,
+      "ci_lo": 0.255,
+      "ci_hi": 0.345,
+      "ci_half_width_pp": 4.499999999999998,
+      "n_correct": 120,
+      "n_total": 400
+    },
+    "pipeline_pass_at_1": {
+      "point": 0.5475,
+      "ci_lo": 0.4975,
+      "ci_hi": 0.595,
+      "ci_half_width_pp": 4.874999999999999,
+      "n_correct": 219,
+      "n_total": 400
+    },
+    "pipeline_pass_at_2": {
+      "point": 0.575,
+      "ci_lo": 0.5275,
+      "ci_hi": 0.625,
+      "ci_half_width_pp": 4.875000000000002,
+      "n_correct": 230,
+      "n_total": 400
+    },
+    "orchestrator_pass_at_2": {
+      "point": 0.6725,
+      "ci_lo": 0.6275,
+      "ci_hi": 0.7175,
+      "ci_half_width_pp": 4.5000000000000036,
+      "n_correct": 269,
+      "n_total": 400
+    },
+    "act_only_pass_at_2": {
+      "point": 0.5175,
+      "ci_lo": 0.4675,
+      "ci_hi": 0.5675,
+      "ci_half_width_pp": 4.999999999999999,
+      "n_correct": 207,
+      "n_total": 400
+    },
+    "refinement_off_pass_at_2": {
+      "point": 0.5675,
+      "ci_lo": 0.5175,
+      "ci_hi": 0.615,
+      "ci_half_width_pp": 4.875000000000002,
+      "n_correct": 227,
+      "n_total": 400
+    }
+  },
+  "deltas": {
+    "baseline_to_cot": {
+      "point_delta_pp": 14.499999999999998,
+      "ci_lo_pp": 9.750000000000004,
+      "ci_hi_pp": 19.25,
+      "ci_half_width_pp": 4.749999999999998,
+      "excludes_zero": true,
+      "frac_boot_above_zero": 1.0,
+      "n_paired": 400
+    },
+    "cot_to_pipeline_pass_at_1": {
+      "point_delta_pp": 24.75,
+      "ci_lo_pp": 19.999999999999996,
+      "ci_hi_pp": 29.499999999999993,
+      "ci_half_width_pp": 4.749999999999998,
+      "excludes_zero": true,
+      "frac_boot_above_zero": 1.0,
+      "n_paired": 400
+    },
+    "cot_to_pipeline_pass_at_2": {
+      "point_delta_pp": 27.499999999999996,
+      "ci_lo_pp": 22.999999999999993,
+      "ci_hi_pp": 32.00000000000001,
+      "ci_half_width_pp": 4.500000000000007,
+      "excludes_zero": true,
+      "frac_boot_above_zero": 1.0,
+      "n_paired": 400
+    },
+    "pipeline_pass_at_1_to_pass_at_2": {
+      "point_delta_pp": 2.749999999999997,
+      "ci_lo_pp": 1.2499999999999956,
+      "ci_hi_pp": 4.499999999999993,
+      "ci_half_width_pp": 1.6249999999999987,
+      "excludes_zero": true,
+      "frac_boot_above_zero": 1.0,
+      "n_paired": 400
+    },
+    "pipeline_to_orchestrator_pass_at_2": {
+      "point_delta_pp": 9.750000000000004,
+      "ci_lo_pp": 6.499999999999995,
+      "ci_hi_pp": 13.249999999999995,
+      "ci_half_width_pp": 3.375,
+      "excludes_zero": true,
+      "frac_boot_above_zero": 1.0,
+      "n_paired": 400
+    },
+    "baseline_to_orchestrator_pass_at_2": {
+      "point_delta_pp": 51.74999999999999,
+      "ci_lo_pp": 46.5,
+      "ci_hi_pp": 57.00000000000001,
+      "ci_half_width_pp": 5.250000000000004,
+      "excludes_zero": true,
+      "frac_boot_above_zero": 1.0,
+      "n_paired": 400
+    },
+    "pipeline_to_act_only_pass_at_2": {
+      "point_delta_pp": -5.75,
+      "ci_lo_pp": -9.000000000000002,
+      "ci_hi_pp": -2.500000000000002,
+      "ci_half_width_pp": 3.25,
+      "excludes_zero": true,
+      "frac_boot_above_zero": 0.0,
+      "n_paired": 400
+    },
+    "pipeline_to_refinement_off_pass_at_2": {
+      "point_delta_pp": -0.7499999999999951,
+      "ci_lo_pp": -2.0000000000000018,
+      "ci_hi_pp": 0.2500000000000058,
+      "ci_half_width_pp": 1.1250000000000038,
+      "excludes_zero": false,
+      "frac_boot_above_zero": 0.0502,
+      "n_paired": 400
+    }
+  }
+}
