@@ -1,6 +1,14 @@
-import json
-from shared.types import Grid, Example, Task
-from typing import List
+"""Baseline (no-CoT) prompt.
+
+Grid representation: ASCII with coordinate headers (matches the pipeline
+explorer + definer agents) so the cross-architecture comparison holds grid
+format constant. Only the output format (JSON `{"output": [[...]]}`) is
+preserved from the original ARC Prize-style harness — so `extract_response`
+is unchanged. See `shared/formatting.py::grid_to_ascii` for the format.
+"""
+
+from shared.formatting import grid_to_ascii, format_task_examples
+from shared.types import Task
 
 
 BASELINE_SYSTEM_PROMPT = """You are an expert at solving grid transformation puzzles.
@@ -10,31 +18,20 @@ Each grid is a 2D array of integers 0-9 representing colors:
 
 You will be given training examples (input/output pairs) that demonstrate a transformation rule, then a test input. Apply the same transformation rule to produce the output.
 
+Grids are rendered with row/column coordinate headers for easy reference.
+
 # Output Format
 
-**Do not** output any intermediate reasoning, explanation, markdown-fenced code. 
+**Do not** output any intermediate reasoning, explanation, markdown-fenced code.
 Respond only with a single valid JSON object that contains exactly one key: "output", whose value is the transformed grid as a 2D array of integers.
 
 Example of the ONLY acceptable response shape:
 {"output": [[0,1,2],[3,4,5]]}"""
 
 
-def format_grid(grid: Grid) -> str:
-    return json.dumps(grid)
-
-
-def format_examples(examples: List[Example]) -> str:
-    parts = []
-    for i, ex in enumerate(examples, 1):
-        parts.append(f"Example {i}:")
-        parts.append(f"  Input:  {format_grid(ex.input)}")
-        parts.append(f"  Output: {format_grid(ex.output)}")
-    return "\n".join(parts)
-
-
 def build_user_message(task: Task, test_index: int = 0) -> str:
-    few_shots = format_examples(task.train)
-    test_input = format_grid(task.test[test_index].input)
+    few_shots = format_task_examples(task)
+    test_input = grid_to_ascii(task.test[test_index].input)
     return f"""Here are the training examples:
 
 {few_shots}
