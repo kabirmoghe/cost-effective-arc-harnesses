@@ -32,6 +32,11 @@ src/.env
 # disk is belt-and-suspenders and intentionally not tracked.
 src/output/
 
+# Full DB dump (~850 MB DB; large even gzipped). Regenerate locally with
+# `python -m database.export --full`. The committed runs_summary.csv + schema.sql
+# in src/database/exports/ are what the repo ships.
+src/database/exports/arc_evaluation_full.sql.gz
+
 # Large vendored raw dataset available from the upstream ARC repos. The task
 # data the harnesses actually load lives in arc_official_repo/ (tracked).
 /arc-agi_evaluation_challenges.json
