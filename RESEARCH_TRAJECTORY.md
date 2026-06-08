@@ -332,7 +332,7 @@ Generator scripts in `src/figures/` (share `paper.mplstyle` + `_style.COLORS`).
 | `CLAUDE.md` | Project-wide instructions + naming convention pointer |
 
 ### Reference material (external)
-- ARC-AGI-1 repo: `arc_official_repo/` (training + evaluation splits)
+- ARC-AGI-1 task data: `data/` (training + evaluation splits), vendored from fchollet/ARC-AGI
 - ARC Prize leaderboard: <https://arcprize.org/leaderboard> (for the V3.2-published-harness reference point)
 - "On the Measure of Intelligence" (Chollet 2019): arxiv:1911.01547 — frames why ARC matters
 - Codex unbiased pass@k formula (Chen et al. 2021) — methodology source

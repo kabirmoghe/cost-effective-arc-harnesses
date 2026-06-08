@@ -102,4 +102,4 @@ The "reasoning is decent, code is wonky" intuition is most cleanly true for `05a
 
 ---
 
-*Source run for all examples: `019e3e84-2d28-7445-afb9-113ff0508ad8`. Patches verified against `arc_official_repo/data/evaluation/{task_id}.json`. Visualizer used for inspection: `src/viz/app.py`.*
+*Source run for all examples: `019e3e84-2d28-7445-afb9-113ff0508ad8`. Patches verified against `data/evaluation/{task_id}.json`. Visualizer used for inspection: `src/viz/app.py`.*

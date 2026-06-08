@@ -8,7 +8,7 @@ from .types import Task, Example
 
 
 # Default path to ARC data relative to project root
-DEFAULT_DATA_ROOT = Path(__file__).parent.parent.parent / "arc_official_repo" / "data"
+DEFAULT_DATA_ROOT = Path(__file__).parent.parent.parent / "data"
 
 
 def get_data_path(split: Literal["training", "evaluation"], data_root: Optional[Path] = None) -> Path:

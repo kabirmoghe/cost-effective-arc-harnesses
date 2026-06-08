@@ -18,7 +18,7 @@ from matplotlib.colors import ListedColormap
 from figures._style import save_paper, use_paper_style, REPO
 
 TASK_ID = "3a301edc"
-TASK_PATH = REPO / "arc_official_repo" / "data" / "evaluation" / f"{TASK_ID}.json"
+TASK_PATH = REPO / "data" / "evaluation" / f"{TASK_ID}.json"
 
 # Official ARC 10-color palette (0..9)
 ARC_COLORS = [

@@ -26,6 +26,7 @@ src/.env
 
 # Agents
 .claude/
+CLAUDE.md
 
 # Raw per-agent run output (~4.3 GB / 85k files). The canonical source of truth
 # is Postgres; committed exports live in src/database/exports/. Per-run JSON on
